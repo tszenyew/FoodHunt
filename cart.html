@@ -34,6 +34,31 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
+<script src="js/simpleCart.js">
+   
+</script>
+<script>
+	simpleCart({
+    cartColumns: [
+	{ view: function(item, column){
+    return  "<table class='table-shopping-cart '><tr class='table-head '><th class='column-1'></th><th class='column-2'>Product</th><th class='column-3'>Price</th><th class='column-4 p-l-70'>Quantity</th><th class='column-5'>Total</th></tr><tr class='table-row'><td class='column-1'><div class='cart-img-product b-rad-4 o-f-hidden'><img src='"+item.get('thumb')+"' alt='IMG-PRODUCT'></div></td> <td class='column-2'>" +item.get('name')+"</td> <td class='column-3'> RM"+item.get('price')+"</td> <td class='column-4 p-l-70'>"+item.get('quantity')+"</td> <td class='column-5'> RM"+item.get('total')+"</td>";
+}, attr: 'custom' }
+    
+    ]
+});
+</script>
+<script>
+	simpleCart.currency({
+      code: "MYR",
+      name: "Malaysia ringgit",
+      symbol: "RM",
+      delimiter: ",",
+      decimal: ".",
+      after: false,
+      accuracy: 2
+    });
+</script>
+
 </head>
 <body class="animsition">
 
@@ -169,7 +194,7 @@
 					<div class="header-wrapicon2 m-r-13">
 						<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
 						<span class="header-icons-noti">0</span>
-
+						
 						<!-- Header cart noti -->
 						<div class="header-cart header-dropdown">
 							<ul class="header-cart-wrapitem">
@@ -477,9 +502,9 @@
 		<div class="container">
 			<!-- Cart item -->
 			<div class="container-table-cart pos-relative">
-				<div class="wrap-table-shopping-cart bgwhite">
-					<table class="table-shopping-cart">
-						<tr class="table-head">
+				<div class="wrap-table-shopping-cart bgwhite simpleCart_items ">
+					<table class="table-shopping-cart ">
+						<tr class="table-head ">
 							<th class="column-1"></th>
 							<th class="column-2">Product</th>
 							<th class="column-3">Price</th>
@@ -487,7 +512,7 @@
 							<th class="column-5">Total</th>
 						</tr>
 
-						<tr class="table-row">
+							<tr class="table-row">
 							<td class="column-1">
 								<div class="cart-img-product b-rad-4 o-f-hidden">
 									<img src="images/item-10.jpg" alt="IMG-PRODUCT">
@@ -509,7 +534,8 @@
 								</div>
 							</td>
 							<td class="column-5">$36.00</td>
-						</tr>
+							</tr>
+						</div>
 
 						<tr class="table-row">
 							<td class="column-1">

@@ -34,6 +34,33 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
+<script src="js/simpleCart.js">
+   
+</script>
+<script>
+	simpleCart({
+    cartColumns: [
+        { attr: "name" , label: "Name" } ,
+        { attr: "price" , label: "Price", view: 'currency' } ,
+		{ attr: "quantity" , label: "Qty" } ,
+        { attr: "total" , label: "SubTotal", view: 'currency' } ,
+		{ view: "remove" , text: "Remove" , label: false }
+    ]
+});
+</script>
+<script>
+	simpleCart.currency({
+      code: "MYR",
+      name: "Malaysia ringgit",
+      symbol: "RM",
+      delimiter: ",",
+      decimal: ".",
+      after: false,
+      accuracy: 2
+    });
+</script>
+
+  
 </head>
 <body class="animsition">
 
@@ -59,64 +86,13 @@
 
 				<!-- Header cart noti -->
 				<div class="header-cart header-dropdown">
-					<ul class="header-cart-wrapitem">
-						<li class="header-cart-item">
-							<div class="header-cart-item-img">
-								<img src="images/item-cart-01.jpg" alt="IMG">
-							</div>
-
-							<div class="header-cart-item-txt">
-								<a href="#" class="header-cart-item-name">
-									White Shirt With Pleat Detail Back
-								</a>
-
-								<span class="header-cart-item-info">
-									1 x $19.00
-								</span>
-							</div>
-						</li>
-
-						<li class="header-cart-item">
-							<div class="header-cart-item-img">
-								<img src="images/item-cart-02.jpg" alt="IMG">
-							</div>
-
-							<div class="header-cart-item-txt">
-								<a href="#" class="header-cart-item-name">
-									Converse All Star Hi Black Canvas
-								</a>
-
-								<span class="header-cart-item-info">
-									1 x $39.00
-								</span>
-							</div>
-						</li>
-
-						<li class="header-cart-item">
-							<div class="header-cart-item-img">
-								<img src="images/item-cart-03.jpg" alt="IMG">
-							</div>
-
-							<div class="header-cart-item-txt">
-								<a href="#" class="header-cart-item-name">
-									Nixon Porter Leather Watch In Tan
-								</a>
-
-								<span class="header-cart-item-info">
-									1 x $17.00
-								</span>
-							</div>
-						</li>
-					</ul>
-
-					<div class="header-cart-total">
-						Total: $75.00
+					<div class="simpleCart_items">
+						
 					</div>
-
 					<div class="header-cart-buttons">
 						<div class="header-cart-wrapbtn">
 							<!-- Button -->
-							<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+							<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4 ">
 								View Cart
 							</a>
 						</div>
@@ -172,59 +148,11 @@
 						<span class="header-icons-noti">0</span>
 
 						<!-- Header cart noti -->
-						<div class="header-cart header-dropdown">
-							<ul class="header-cart-wrapitem">
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-01.jpg" alt="IMG">
-									</div>
+						<div class="header-cart header-dropdown simpleCart_items">
+							
 
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											White Shirt With Pleat Detail Back
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $19.00
-										</span>
-									</div>
-								</li>
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-02.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											Converse All Star Hi Black Canvas
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $39.00
-										</span>
-									</div>
-								</li>
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-03.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											Nixon Porter Leather Watch In Tan
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $17.00
-										</span>
-									</div>
-								</li>
-							</ul>
-
-							<div class="header-cart-total">
-								Total: $75.00
+							<div class="header-cart-total simpleCart_total">
+								
 							</div>
 
 							<div class="header-cart-buttons">
@@ -313,40 +241,10 @@
 
 						<!-- Header cart noti -->
 						<div class="header-cart header-dropdown">
-							<ul class="header-cart-wrapitem">
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-01.jpg" alt="IMG">
-									</div>
+							<ul class="header-cart-wrapitem simpleCart_quantity">
+								
 
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											White Shirt With Pleat Detail Back
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $19.00
-										</span>
-									</div>
-								</li>
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-02.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											Converse All Star Hi Black Canvas
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $39.00
-										</span>
-									</div>
-								</li>
-
-								<li class="header-cart-item">
+								<li class="header-cart-item ">
 									<div class="header-cart-item-img">
 										<img src="images/item-cart-03.jpg" alt="IMG">
 									</div>
@@ -363,8 +261,8 @@
 								</li>
 							</ul>
 
-							<div class="header-cart-total">
-								Total: $75.00
+							<div class="header-cart-total item-total">
+								
 							</div>
 
 							<div class="header-cart-buttons">
@@ -479,7 +377,7 @@
 	<section class="bgwhite p-t-45 p-b-58">
 		<div class="container">
 			
-
+			<div class="simpleCart_items"></div>
 			<!-- Tab01 -->
 			<div class="tab01">
 				<!-- Nav tabs -->
@@ -516,20 +414,22 @@
 
 											<div class="block2-btn-addcart w-size1 trans-0-4">
 												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+												
+												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 " onclick="simpleCart.add({name:'Chicken Burger', price: 5.00,size:'tiny',thumb:'images/chicken-burger.jpg'});">
 													Add to Cart
 												</button>
+												
 											</div>
 										</div>
 									</div>
 
-									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Chicken Burger</strong>
+									<div class="block2-txt p-t-20 ">
+										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5 ">
+											<strong >Chicken Burger</strong>
 										</a>
 
-										<span class="block2-price m-text6 p-r-5">
-											<strong>RM 5.00</strong>
+										<span class="block2-price m-text6 p-r-5 ">
+											<strong >RM 5.00</strong>
 										</span>
 									</div>
 								</div>
@@ -549,7 +449,7 @@
 
 											<div class="block2-btn-addcart w-size1 trans-0-4">
 												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 onclick="simpleCart.add({name:'Chicken Finger', price: 6.50,size:'tiny',thumb:'images/chicken-finger.jpg'});"">
 													Add to Cart
 												</button>
 											</div>
