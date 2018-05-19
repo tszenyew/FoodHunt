@@ -63,7 +63,22 @@
       accuracy: 2
     });
 </script>
-
+<script>
+	simpleCart({
+    checkout: { 
+        type: "PayPal" , 
+        email: "you@yours.com" ,
+        // use paypal sandbox, default is false
+        sandbox: true , 
+        // http method for form, "POST" or "GET", default is "POST"
+        method: "GET" , 
+        // url to return to on successful checkout, default is null
+        success: "success.html" , 
+        // url to return to on cancelled checkout, default is null
+        cancel: "cancel.html" 
+    } 
+});
+</script>
 </head>
 <body class="animsition">
 
@@ -378,16 +393,18 @@
 						Total:
 					</span>
 
-					<span class="m-text21 w-size20 w-full-sm">
-						$39.00
+					<span class="m-text21 w-size20 w-full-sm simpleCart_grandTotal">
+						
 					</span>
 				</div>
 
 				<div class="size15 trans-0-4">
 					<!-- Button -->
+					<a href="javascript:;" class="simpleCart_checkout">
 					<button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
 						Proceed to Checkout
 					</button>
+					</a>
 				</div>
 			</div>
 		</div>
