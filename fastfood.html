@@ -38,16 +38,17 @@
    
 </script>
 <script>
-	simpleCart({
+simpleCart({
     cartColumns: [
-        { attr: "name" , label: "Name" } ,
-        { attr: "price" , label: "Price", view: 'currency' } ,
-		{ attr: "quantity" , label: "Qty" } ,
-        { attr: "total" , label: "SubTotal", view: 'currency' } ,
-		{ view: "remove" , text: "Remove" , label: false }
+	{ view: function(item, column){
+    return  "<li class='header-cart-item'><div class='header-cart-item-img'><img src='"+item.get('thumb')+"' alt='IMG'></div><div class='header-cart-item-txt'><a href='#' class='header-cart-item-name'>" +item.get('name')+"</a><span class='header-cart-item-info'>"+item.get('quantity')+" x RM"+item.get('price')+"</span></div></li>";
+}, attr: 'custom' },
+
     ]
 });
+	
 </script>
+
 <script>
 	simpleCart.currency({
       code: "MYR",
@@ -85,15 +86,17 @@
 				<span class="header-icons-noti">0</span>
 
 				<!-- Header cart noti -->
-				<div class="header-cart header-dropdown">
-					<div class="simpleCart_items">
-						
+				<div class="header-cart header-dropdown ">
+					<ul class='header-cart-wrapitem simpleCart_items'>
+					</ul>		
+					<div class="header-cart-total ">
+						SubTotal <p class="simpleCart_total"></p>
 					</div>
 					<div class="header-cart-buttons">
 						<div class="header-cart-wrapbtn">
 							<!-- Button -->
-							<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4 ">
-								View Cart
+							<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+							View Cart
 							</a>
 						</div>
 
@@ -148,13 +151,16 @@
 						<span class="header-icons-noti">0</span>
 
 						<!-- Header cart noti -->
-						<div class="header-cart header-dropdown simpleCart_items">
+						<div class="header-cart header-dropdown ">
 							
 
-							<div class="header-cart-total simpleCart_total">
-								
+							<div class="header-cart-total ">
+									<ul class='header-cart-wrapitem simpleCart_items'>
+									</ul>
 							</div>
-
+							<div class="header-cart-total ">
+									SubTotal <p class="simpleCart_total"></p>
+								</div>
 							<div class="header-cart-buttons">
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
@@ -241,25 +247,8 @@
 
 						<!-- Header cart noti -->
 						<div class="header-cart header-dropdown">
-							<ul class="header-cart-wrapitem simpleCart_quantity">
-								
-
-								<li class="header-cart-item ">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-03.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											Nixon Porter Leather Watch In Tan
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $17.00
-										</span>
-									</div>
-								</li>
-							</ul>
+								<ul class="header-cart-wrapitem ">
+								</ul>
 
 							<div class="header-cart-total item-total">
 								
@@ -377,7 +366,7 @@
 	<section class="bgwhite p-t-45 p-b-58">
 		<div class="container">
 			
-			<div class="simpleCart_items"></div>
+			
 			<!-- Tab01 -->
 			<div class="tab01">
 				<!-- Nav tabs -->
@@ -415,7 +404,7 @@
 											<div class="block2-btn-addcart w-size1 trans-0-4">
 												<!-- Button -->
 												
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 " onclick="simpleCart.add({name:'Chicken Burger', price: 5.00,size:'tiny',thumb:'images/chicken-burger.jpg'});">
+												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Chicken Burger', price: 5.00,size:'tiny',thumb:'images/chicken-burger.jpg'});">
 													Add to Cart
 												</button>
 												
@@ -449,7 +438,7 @@
 
 											<div class="block2-btn-addcart w-size1 trans-0-4">
 												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 onclick="simpleCart.add({name:'Chicken Finger', price: 6.50,size:'tiny',thumb:'images/chicken-finger.jpg'});"">
+												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Chicken Finger', price: 6.50,size:'tiny',thumb:'images/chicken-finger.jpg'});">
 													Add to Cart
 												</button>
 											</div>

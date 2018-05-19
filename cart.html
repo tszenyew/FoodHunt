@@ -41,11 +41,16 @@
 	simpleCart({
     cartColumns: [
 	{ view: function(item, column){
-    return  "<table class='table-shopping-cart '><tr class='table-head '><th class='column-1'></th><th class='column-2'>Product</th><th class='column-3'>Price</th><th class='column-4 p-l-70'>Quantity</th><th class='column-5'>Total</th></tr><tr class='table-row'><td class='column-1'><div class='cart-img-product b-rad-4 o-f-hidden'><img src='"+item.get('thumb')+"' alt='IMG-PRODUCT'></div></td> <td class='column-2'>" +item.get('name')+"</td> <td class='column-3'> RM"+item.get('price')+"</td> <td class='column-4 p-l-70'>"+item.get('quantity')+"</td> <td class='column-5'> RM"+item.get('total')+"</td>";
+    return  "<tr class='table-row'><td class='column-1'><div class='cart-img-product b-rad-4 o-f-hidden'><img src='"+item.get('thumb')+"' alt='IMG-PRODUCT'></div></td> <td class='column-2'>" +item.get('name')+"</td> <td class='column-3'>RM"+item.get('price')+"</td> <td class='column-4 p-l-70' style='font-size:25px;'> <a href='javascript:;' class='simpleCart_increment'><button type='button' style='font-size:25px; border: 2px; padding: 15px;'>+</button></a> <span>"+item.get('quantity')+"<span><a href='javascript:;' class='simpleCart_decrement'><button type='button' style='font-size:35px; border: 2px; padding: 15px;'>-</button></a></td> <td class='column-5'> RM"+item.get('total')+"</td>";
 }, attr: 'custom' }
-    
     ]
 });
+</script>
+<script>
+	function updateTotal(){
+		
+		document.getElementById("item-total").textContent=newtext;
+	}
 </script>
 <script>
 	simpleCart.currency({
@@ -76,85 +81,6 @@
 				<img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
 			</a>
 
-			<span class="linedivide1"></span>
-
-			<div class="header-wrapicon2">
-				<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-				<span class="header-icons-noti">0</span>
-
-				<!-- Header cart noti -->
-				<div class="header-cart header-dropdown">
-					<ul class="header-cart-wrapitem">
-						<li class="header-cart-item">
-							<div class="header-cart-item-img">
-								<img src="images/item-cart-01.jpg" alt="IMG">
-							</div>
-
-							<div class="header-cart-item-txt">
-								<a href="#" class="header-cart-item-name">
-									White Shirt With Pleat Detail Back
-								</a>
-
-								<span class="header-cart-item-info">
-									1 x $19.00
-								</span>
-							</div>
-						</li>
-
-						<li class="header-cart-item">
-							<div class="header-cart-item-img">
-								<img src="images/item-cart-02.jpg" alt="IMG">
-							</div>
-
-							<div class="header-cart-item-txt">
-								<a href="#" class="header-cart-item-name">
-									Converse All Star Hi Black Canvas
-								</a>
-
-								<span class="header-cart-item-info">
-									1 x $39.00
-								</span>
-							</div>
-						</li>
-
-						<li class="header-cart-item">
-							<div class="header-cart-item-img">
-								<img src="images/item-cart-03.jpg" alt="IMG">
-							</div>
-
-							<div class="header-cart-item-txt">
-								<a href="#" class="header-cart-item-name">
-									Nixon Porter Leather Watch In Tan
-								</a>
-
-								<span class="header-cart-item-info">
-									1 x $17.00
-								</span>
-							</div>
-						</li>
-					</ul>
-
-					<div class="header-cart-total">
-						Total: $75.00
-					</div>
-
-					<div class="header-cart-buttons">
-						<div class="header-cart-wrapbtn">
-							<!-- Button -->
-							<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-								View Cart
-							</a>
-						</div>
-
-						<div class="header-cart-wrapbtn">
-							<!-- Button -->
-							<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-								Check Out
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 
@@ -189,85 +115,7 @@
 						<img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
 					</a>
 
-					<span class="linedivide1"></span>
 
-					<div class="header-wrapicon2 m-r-13">
-						<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-						<span class="header-icons-noti">0</span>
-						
-						<!-- Header cart noti -->
-						<div class="header-cart header-dropdown">
-							<ul class="header-cart-wrapitem">
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-01.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											White Shirt With Pleat Detail Back
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $19.00
-										</span>
-									</div>
-								</li>
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-02.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											Converse All Star Hi Black Canvas
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $39.00
-										</span>
-									</div>
-								</li>
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-03.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											Nixon Porter Leather Watch In Tan
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $17.00
-										</span>
-									</div>
-								</li>
-							</ul>
-
-							<div class="header-cart-total">
-								Total: $75.00
-							</div>
-
-							<div class="header-cart-buttons">
-								<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										View Cart
-									</a>
-								</div>
-
-								<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										Check Out
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 
@@ -329,85 +177,9 @@
 						<img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
 					</a>
 
-					<span class="linedivide2"></span>
+					
 
-					<div class="header-wrapicon2">
-						<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-						<span class="header-icons-noti">0</span>
 
-						<!-- Header cart noti -->
-						<div class="header-cart header-dropdown">
-							<ul class="header-cart-wrapitem">
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-01.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											White Shirt With Pleat Detail Back
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $19.00
-										</span>
-									</div>
-								</li>
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-02.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											Converse All Star Hi Black Canvas
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $39.00
-										</span>
-									</div>
-								</li>
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-03.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											Nixon Porter Leather Watch In Tan
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $17.00
-										</span>
-									</div>
-								</li>
-							</ul>
-
-							<div class="header-cart-total">
-								Total: $75.00
-							</div>
-
-							<div class="header-cart-buttons">
-								<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										View Cart
-									</a>
-								</div>
-
-								<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										Check Out
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 
 				<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
@@ -502,64 +274,20 @@
 		<div class="container">
 			<!-- Cart item -->
 			<div class="container-table-cart pos-relative">
-				<div class="wrap-table-shopping-cart bgwhite simpleCart_items ">
-					<table class="table-shopping-cart ">
-						<tr class="table-head ">
-							<th class="column-1"></th>
-							<th class="column-2">Product</th>
-							<th class="column-3">Price</th>
-							<th class="column-4 p-l-70">Quantity</th>
-							<th class="column-5">Total</th>
-						</tr>
+				<div class="wrap-table-shopping-cart bgwhite  ">
+						<table class="table-shopping-cart">
+								<tr class="table-head ">
+									<th class="column-1"></th>
+									<th class="column-2">Product</th>
+									<th class="column-3">Price</th>
+									<th class="column-4 p-l-70">Quantity</th>
+									<th class="column-5">Total</th>
+								</tr>
+						</table>
+					<table class="table-shopping-cart simpleCart_items">
+						
 
-							<tr class="table-row">
-							<td class="column-1">
-								<div class="cart-img-product b-rad-4 o-f-hidden">
-									<img src="images/item-10.jpg" alt="IMG-PRODUCT">
-								</div>
-							</td>
-							<td class="column-2">Men Tshirt</td>
-							<td class="column-3">$36.00</td>
-							<td class="column-4">
-								<div class="flex-w bo5 of-hidden w-size17">
-									<button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
-										<i class="fs-12 fa fa-minus" aria-hidden="true"></i>
-									</button>
-
-									<input class="size8 m-text18 t-center num-product" type="number" name="num-product1" value="1">
-
-									<button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
-										<i class="fs-12 fa fa-plus" aria-hidden="true"></i>
-									</button>
-								</div>
-							</td>
-							<td class="column-5">$36.00</td>
-							</tr>
-						</div>
-
-						<tr class="table-row">
-							<td class="column-1">
-								<div class="cart-img-product b-rad-4 o-f-hidden">
-									<img src="images/item-05.jpg" alt="IMG-PRODUCT">
-								</div>
-							</td>
-							<td class="column-2">Mug Adventure</td>
-							<td class="column-3">$16.00</td>
-							<td class="column-4">
-								<div class="flex-w bo5 of-hidden w-size17">
-									<button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
-										<i class="fs-12 fa fa-minus" aria-hidden="true"></i>
-									</button>
-
-									<input class="size8 m-text18 t-center num-product" type="number" name="num-product2" value="1">
-
-									<button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
-										<i class="fs-12 fa fa-plus" aria-hidden="true"></i>
-									</button>
-								</div>
-							</td>
-							<td class="column-5">$16.00</td>
-						</tr>
+							
 					</table>
 				</div>
 			</div>
@@ -580,7 +308,7 @@
 
 				<div class="size10 trans-0-4 m-t-10 m-b-10">
 					<!-- Button -->
-					<button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
+					<button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4" onclick ="updateTotal()">
 						Update Cart
 					</button>
 				</div>
@@ -598,8 +326,8 @@
 						Subtotal:
 					</span>
 
-					<span class="m-text21 w-size20 w-full-sm">
-						$39.00
+					<span class="m-text21 w-size20 w-full-sm simpleCart_total" id="item-total">
+						
 					</span>
 				</div>
 
