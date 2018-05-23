@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Fast Food</title>
+	<title>Local Cuisine</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -34,6 +34,9 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
+
+
+
 <script src="js/simpleCart.js">
    
 </script>
@@ -71,7 +74,9 @@ simpleCart({
 		<a href="index.html" class="logo2">
 			<img src="images/icons/logo2.png" alt="IMG-LOGO">
 		</a>
-    </div>
+	</div>
+
+
 
 	<!-- Header -->
 	<header class="header2">
@@ -91,10 +96,12 @@ simpleCart({
 					<img src="images/icons/logo2.png" alt="IMG-LOGO">
 				</a>
 
-
 					</div>
 				</div>
 			</div>
+			
+			
+			
 
 			<div class="wrap_header">
 
@@ -111,11 +118,11 @@ simpleCart({
 								<a href="about.html">About</a>
 							</li>
 
-							<li class ="sale-noti">
+							<li>
 								<a href="fastfood.html">Fast Food</a>
 							</li>
 
-							<li >
+							<li class ="sale-noti">
 								<a href="localcuisine.html">Local Cuisine</a>
 							</li>
 
@@ -139,11 +146,11 @@ simpleCart({
 			</div>
 		</div>
 
-		</header>
+	</header>
 	<!-- Title Page -->
 	<section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url(images/bg.jpg);">
 		<h2 class="l-text2 t-center">
-			Fast Food Menu
+			Local Cuisine Menu
 		</h2>
 	
 	</section>
@@ -163,15 +170,14 @@ simpleCart({
 								<!-- Block2 -->
 								<div class="block2">
 									<div class="block2-img wrap-pic-w of-hidden pos-relative ">
-										<img src="images/chicken-burger.jpg" alt="IMG-PRODUCT" width="200" height="200">
+										<img src="images/pattaya.jpg" alt="IMG-PRODUCT" width="200" height="200">
 
 										<div class="block2-overlay trans-0-4">
-
 
 											<div class="block2-btn-addcart w-size1 trans-0-4">
 												<!-- Button -->
 												
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Chicken Burger', price: 5.00,size:'tiny',thumb:'images/chicken-burger.jpg'});">
+												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Nasi Goreng Pattaya', price: 5.50,size:'tiny',thumb:'images/pattaya.jpg'});">
 													Add to Cart
 												</button>
 												
@@ -180,29 +186,30 @@ simpleCart({
 									</div>
 
 									<div class="block2-txt p-t-20 ">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5 ">
-											<strong >Chicken Burger</strong>
+										<a href="ngpattayadetail.html" class="block2-name dis-block s-text3 p-b-5 ">
+											<strong >Nasi Goreng Pattaya</strong>
 										</a>
 
 										<span class="block2-price m-text6 p-r-5 ">
-											<strong >RM 5.00</strong>
+											<strong >RM 5.50</strong>
 										</span>
 									</div>
+
 								</div>
 							</div>
 
+							
 							<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
 								<!-- Block2 -->
 								<div class="block2">
-									<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-										<img src="images/chicken-finger.jpg" alt="IMG-PRODUCT" width="200" height="200">
+									<div class="block2-img wrap-pic-w of-hidden pos-relative ">
+										<img src="images/ngkampung.jpg" alt="IMG-PRODUCT" width="200" height="200">
 
 										<div class="block2-overlay trans-0-4">
-											
-
+										
 											<div class="block2-btn-addcart w-size1 trans-0-4">
 												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Chicken Finger', price: 6.50,size:'tiny',thumb:'images/chicken-finger.jpg'});">
+												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Nasi Goreng Kampung', price: 4.50,size:'tiny',thumb:'images/ngkampung.jpg'});">
 													Add to Cart
 												</button>
 											</div>
@@ -211,7 +218,70 @@ simpleCart({
 
 									<div class="block2-txt p-t-20">
 										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Chicken Finger</strong>
+											<strong>Nasi Goreng Kampung</strong>
+										</a>
+
+										<span class="block2-price m-text6 p-r-5">
+											<strong>RM 4.50</strong>
+										</span>
+									</div>
+									
+								
+								</div>
+							</div>
+
+							<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
+								<!-- Block2 -->
+								<div class="block2">
+									<div class="block2-img wrap-pic-w of-hidden pos-relative">
+										<img src="images/ngcina.jpg" alt="IMG-PRODUCT" width="200" height="200">
+
+										<div class="block2-overlay trans-0-4">
+
+											<div class="block2-btn-addcart w-size1 trans-0-4">
+												<!-- Button -->
+												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Nasi Goreng Cina', price: 4.50,size:'tiny',thumb:'images/ngcina.jpg'});">
+													Add to Cart
+												</button>
+											</div>
+										</div>
+									</div>
+
+									<div class="block2-txt p-t-20">
+										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+											<strong>Nasi Goreng Cina</strong>
+										</a>
+
+										<span class="block2-price m-text6 p-r-5">
+											<strong>RM 4.50</strong>
+										</span>
+									</div>
+								</div>
+							</div>
+
+							
+						
+
+							<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
+								<!-- Block2 -->
+								<div class="block2">
+									<div class="block2-img wrap-pic-w of-hidden pos-relative">
+										<img src="images/ngusa.jpg" alt="IMG-PRODUCT" width="200" height="200">
+
+										<div class="block2-overlay trans-0-4">
+
+											<div class="block2-btn-addcart w-size1 trans-0-4">
+												<!-- Button -->
+												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Nasi Goreng USA', price: 6.50,size:'tiny',thumb:'images/ngusa.jpg'});">
+													Add to Cart
+												</button>
+											</div>
+										</div>
+									</div>
+
+									<div class="block2-txt p-t-20">
+										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+											<strong>Nasi Goreng USA</strong>
 										</a>
 
 										<span class="block2-price m-text6 p-r-5">
@@ -221,18 +291,21 @@ simpleCart({
 								</div>
 							</div>
 
+						
+
+							
+
 							<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
 								<!-- Block2 -->
 								<div class="block2">
-									<div class="block2-img wrap-pic-w of-hidden pos-relative">
-										<img src="images/veg-burger.jpg" alt="IMG-PRODUCT" width="200" height="200">
+									<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
+										<img src="images/ngseafood.jpg" alt="IMG-PRODUCT" width="200" height="200">
 
 										<div class="block2-overlay trans-0-4">
-											
 
 											<div class="block2-btn-addcart w-size1 trans-0-4">
 												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Vegetable Burger', price: 6.00,size:'tiny',thumb:'images/veg-burger.jpg'});">
+												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Nasi Goreng Seafood', price: 6.00,size:'tiny',thumb:'images/ngseafood.jpg'});">
 													Add to Cart
 												</button>
 											</div>
@@ -241,8 +314,10 @@ simpleCart({
 
 									<div class="block2-txt p-t-20">
 										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Vegetable Burger</strong>
+											<strong>Nasi Goreng Seafood</strong>
 										</a>
+
+										
 
 										<span class="block2-price m-text6 p-r-5">
 											<strong>RM 6.00</strong>
@@ -250,85 +325,18 @@ simpleCart({
 									</div>
 								</div>
 							</div>
-
 							
-						
-
 							<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
 								<!-- Block2 -->
 								<div class="block2">
-									<div class="block2-img wrap-pic-w of-hidden pos-relative">
-										<img src="images/chickenfry.jpg" alt="IMG-PRODUCT" width="200" height="200">
-
-										<div class="block2-overlay trans-0-4">
-
-											<div class="block2-btn-addcart w-size1 trans-0-4">
-												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Fried Chicken', price: 6.50,size:'tiny',thumb:'images/chickenfry.jpg'});">
-													Add to Cart
-												</button>
-											</div>
-										</div>
-									</div>
-
-									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Fried Chicken</strong>
-										</a>
-
-										<span class="block2-price m-text6 p-r-5">
-											<strong>RM 6.50</strong>
-										</span>
-									</div>
-								</div>
-							</div>
-
-						
-
-							
-
-							<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
-								<!-- Block2 -->
-								<div class="block2">
-									<div class="block2-img wrap-pic-w of-hidden pos-relative">
-										<img src="images/beef-burger.jpg" alt="IMG-PRODUCT" width="200" height="200">
+									<div class="block2-img wrap-pic-w of-hidden pos-relative ">
+										<img src="images/meegoreng.jpg" alt="IMG-PRODUCT" width="200" height="200">
 
 										<div class="block2-overlay trans-0-4">
 											
 											<div class="block2-btn-addcart w-size1 trans-0-4">
 												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Beef Burger', price: 6.50,size:'tiny',thumb:'images/beef-burger.jpg'});">
-													Add to Cart
-												</button>
-											</div>
-										</div>
-									</div>
-
-									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Beef Burger</strong>
-										</a>
-
-										
-
-										<span class="block2-price m-text6 p-r-5">
-											<strong>RM 6.50</strong>
-										</span>
-									</div>
-								</div>
-							</div>
-							
-							<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
-								<!-- Block2 -->
-								<div class="block2">
-									<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-										<img src="images/doublebeef.jpg" alt="IMG-PRODUCT" width="200" height="200">
-
-										<div class="block2-overlay trans-0-4">
-											
-											<div class="block2-btn-addcart w-size1 trans-0-4">
-												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Double Beef Burger', price: 8.00,size:'tiny',thumb:'images/doublebeef.jpg'});">
+												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Mee Goreng', price: 5.00,size:'tiny',thumb:'images/meegoreng.jpg'});">
 													Add to Cart
 												</button>
 											</div>
@@ -339,27 +347,27 @@ simpleCart({
 
 									<div class="block2-txt p-t-20">
 										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Double Beef Burger</strong>
+											<strong>Mee Goreng</strong>
 										</a>
 
 										<span class="block2-price m-text6 p-r-5">
-											<strong>RM 8.00</strong>
+											<strong>RM 5.00</strong>
 										</span>
 									</div>
 								</div>
 							</div>
 
-							<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
+								<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
 								<!-- Block2 -->
 								<div class="block2">
-									<div class="block2-img wrap-pic-w of-hidden pos-relative">
-										<img src="images/doublechicken.jpg" alt="IMG-PRODUCT" width="200" height="200">
+									<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
+										<img src="images/meebandung.jpg" alt="IMG-PRODUCT" width="200" height="200">
 
 										<div class="block2-overlay trans-0-4">
 											
 											<div class="block2-btn-addcart w-size1 trans-0-4">
 												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Double Chicken Burger', price: 6.50,size:'tiny',thumb:'images/doublechicken.jpg'});">
+												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Mee Bandung', price: 6.50,size:'tiny',thumb:'images/meebandung.jpg'});">
 													Add to Cart
 												</button>
 											</div>
@@ -368,7 +376,66 @@ simpleCart({
 
 									<div class="block2-txt p-t-20">
 										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Double Chicken Burger</strong>
+											<strong>Mee Bandung</strong>
+										</a>
+
+										<span class="block2-price m-text6 p-r-5">
+											<strong>RM 6.50</strong>
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
+								<!-- Block2 -->
+								<div class="block2">
+									<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
+										<img src="images/meehailam.jpg" alt="IMG-PRODUCT" width="200" height="200">
+
+										<div class="block2-overlay trans-0-4">
+											
+											<div class="block2-btn-addcart w-size1 trans-0-4">
+												<!-- Button -->
+												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Mee Hailam', price: 6.50,size:'tiny',thumb:'images/meehailam.jpg'});">
+													Add to Cart
+												</button>
+											</div>
+										</div>
+									</div>
+
+									<div class="block2-txt p-t-20">
+										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+											<strong>Mee Hailam</strong>
+										</a>
+
+										<span class="block2-price m-text6 p-r-5">
+											<strong>RM 6.50</strong>
+										</span>
+									</div>
+								</div>
+							</div>
+							
+							
+							<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
+								<!-- Block2 -->
+								<div class="block2">
+									<div class="block2-img wrap-pic-w of-hidden pos-relative">
+										<img src="images/bihungorengayam.jpg" alt="IMG-PRODUCT" width="200" height="200">
+
+										<div class="block2-overlay trans-0-4">
+											
+											<div class="block2-btn-addcart w-size1 trans-0-4">
+												<!-- Button -->
+												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Bihun Goreng Ayam', price: 6.50,size:'tiny',thumb:'images/bihungorengayam.jpg'});">
+													Add to Cart
+												</button>
+											</div>
+										</div>
+									</div>
+
+									<div class="block2-txt p-t-20">
+										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+											<strong>Bihun Goreng</strong>
 										</a>
 
 										<span class="block2-price m-text6 p-r-5">
@@ -384,13 +451,13 @@ simpleCart({
 								<!-- Block2 -->
 								<div class="block2">
 									<div class="block2-img wrap-pic-w of-hidden pos-relative">
-										<img src="images/hotdog.jpg" alt="IMG-PRODUCT" width="200" height="200">
+										<img src="images/kuewteowgoreng.jpg" alt="IMG-PRODUCT" width="200" height="200">
 
 										<div class="block2-overlay trans-0-4">
-											
+
 											<div class="block2-btn-addcart w-size1 trans-0-4">
 												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Hotdog', price: 4.00,size:'tiny',thumb:'images/hotdog.jpg'});">
+												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Kuew Teow Goreng', price: 5.00,size:'tiny',thumb:'images/kuewteowgoreng.jpg'});">
 													Add to Cart
 												</button>
 											</div>
@@ -399,11 +466,11 @@ simpleCart({
 
 									<div class="block2-txt p-t-20">
 										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Hotdog</strong>
+											<strong>Kuew Teow Goreng</strong>
 										</a>
 
 										<span class="block2-price m-text6 p-r-5">
-											<strong>RM 4.00</strong>
+											<strong>RM 5.00</strong>
 										</span>
 									</div>
 								</div>
@@ -413,72 +480,14 @@ simpleCart({
 								<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
 								<!-- Block2 -->
 								<div class="block2">
-									<div class="block2-img wrap-pic-w of-hidden pos-relative">
-										<img src="images/chickenpepperonipizza.jpg" alt="IMG-PRODUCT" width="200" height="200">
-
-										<div class="block2-overlay trans-0-4">
-											
-											<div class="block2-btn-addcart w-size1 trans-0-4">
-												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Chicken Pepperoni Pizza', price: 9.50,size:'tiny',thumb:'images/chickenpepperonipizza.jpg'});">
-													Add to Cart
-												</button>
-											</div>
-										</div>
-									</div>
-
-									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Chicken Pepperoni Pizza</strong>
-										</a>
-
-										<span class="block2-price m-text6 p-r-5">
-											<strong>RM 9.50</strong>
-										</span>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
-								<!-- Block2 -->
-								<div class="block2">
-									<div class="block2-img wrap-pic-w of-hidden pos-relative">
-										<img src="images/hawaiianchickenpizza.jpg" alt="IMG-PRODUCT" width="200" height="200">
-
-										<div class="block2-overlay trans-0-4">
-											
-											<div class="block2-btn-addcart w-size1 trans-0-4">
-												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Hawaiian Chicken Pizza', price: 9.00,size:'tiny',thumb:'images/hawaiianchickenpizza.jpg'});">
-													Add to Cart
-												</button>
-											</div>
-										</div>
-									</div>
-
-									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Hawaiian Chicken Pizza</strong>
-										</a>
-
-										<span class="block2-price m-text6 p-r-5">
-											<strong>RM 9.00</strong>
-										</span>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
-								<!-- Block2 -->
-								<div class="block2">
 									<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-										<img src="images/islandtunapizza.jpg" alt="IMG-PRODUCT" width="200" height="200">
+										<img src="images/kuewteowkungfu.jpg" alt="IMG-PRODUCT" width="200" height="200">
 
 										<div class="block2-overlay trans-0-4">
 											
 											<div class="block2-btn-addcart w-size1 trans-0-4">
 												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Island Tuna Pizza', price: 10.50,size:'tiny',thumb:'images/islandtunapizza.jpg'});">
+												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Kuew Teow Kungfu', price: 6.50,size:'tiny',thumb:'images/kuewteowkungfu.jpg'});">
 													Add to Cart
 												</button>
 											</div>
@@ -487,44 +496,16 @@ simpleCart({
 
 									<div class="block2-txt p-t-20">
 										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Island Tuna Pizza</strong>
+											<strong>Kuew Teow Kungfu</strong>
 										</a>
 
 										<span class="block2-price m-text6 p-r-5">
-											<strong>RM 10.50</strong>
+											<strong>RM 6.50</strong>
 										</span>
 									</div>
 								</div>
 							</div>
 
-							<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
-								<!-- Block2 -->
-								<div class="block2">
-									<div class="block2-img wrap-pic-w of-hidden pos-relative">
-										<img src="images/beefpepperonipizza.jpg" alt="IMG-PRODUCT" width="200" height="200">
-
-										<div class="block2-overlay trans-0-4">
-											
-											<div class="block2-btn-addcart w-size1 trans-0-4">
-												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Beef Pepperoni Pizza', price: 10.90,size:'tiny',thumb:'images/beefpepperonipizza.jpg'});">
-													Add to Cart
-												</button>
-											</div>
-										</div>
-									</div>
-
-									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Beef Pepperoni Pizza</strong>
-										</a>
-
-										<span class="block2-price m-text6 p-r-5">
-											<strong>RM 10.90</strong>
-										</span>
-									</div>
-								</div>
-							</div>
 							
 						</div>
 					</div>
@@ -544,13 +525,13 @@ simpleCart({
 								<!-- Block2 -->
 								<div class="block2">
 									<div class="block2-img wrap-pic-w of-hidden pos-relative ">
-										<img src="images/chicken-nugget.jpg" alt="IMG-PRODUCT" width="200" height="200">
+										<img src="images/telurmata.jpg" alt="IMG-PRODUCT" width="200" height="200">
 
 										<div class="block2-overlay trans-0-4">
 											
 											<div class="block2-btn-addcart w-size1 trans-0-4">
 												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Chicken Nuggets ', price: 4.00,size:'tiny',thumb:'images/chicken-nugget.jpg'});">
+												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Telur Mata', price: 1.00,size:'tiny',thumb:'images/telurmata.jpg'});">
 													Add to Cart
 												</button>
 											</div>
@@ -559,13 +540,13 @@ simpleCart({
 
 									<div class="block2-txt p-t-20">
 										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Chicken Nuggets </strong>
+											<strong>Telur Mata</strong>
 										</a>
 
 										
 
 										<span class="block2-price m-text6 p-r-5">
-										<strong>RM 4.00</strong>
+										<strong>RM 1.00</strong>
 										</span>
 									</div>
 								</div>
@@ -574,14 +555,14 @@ simpleCart({
 							<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
 								<!-- Block2 -->
 								<div class="block2">
-									<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-										<img src="images/mushroom-soup.jpg" alt="IMG-PRODUCT" width="200" height="200">
+									<div class="block2-img wrap-pic-w of-hidden pos-relative ">
+										<img src="images/telurdadar.jpg" alt="IMG-PRODUCT" width="200" height="200">
 
 										<div class="block2-overlay trans-0-4">
 
 											<div class="block2-btn-addcart w-size1 trans-0-4">
 												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Mushroom Soup', price: 5.50,size:'tiny',thumb:'images/mushroom-soup.jpg'});">
+												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Telur Dadar', price: 2.00,size:'tiny',thumb:'images/telurdadar.jpg'});">
 													Add to Cart
 												</button>
 											</div>
@@ -590,127 +571,11 @@ simpleCart({
 
 									<div class="block2-txt p-t-20">
 										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Mushroom Soup</strong>
+											<strong>Telur Dadar</strong>
 										</a>
 
 										<span class="block2-price m-text6 p-r-5">
-											<strong>RM 5.50</strong>
-										</span>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
-								<!-- Block2 -->
-								<div class="block2">
-									<div class="block2-img wrap-pic-w of-hidden pos-relative">
-										<img src="images/veg-soup.jpg" alt="IMG-PRODUCT" width="200" height="200">
-
-										<div class="block2-overlay trans-0-4">
-											
-											<div class="block2-btn-addcart w-size1 trans-0-4">
-												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Vegetable Soup', price: 5.00,size:'tiny',thumb:'images/veg-soup.jpg'});">
-													Add to Cart
-												</button>
-											</div>
-										</div>
-									</div>
-
-									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Vegetable Soup</strong>
-										</a>
-
-										<span class="block2-price m-text6 p-r-5">
-										<strong>RM 5.00</strong>
-										</span>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
-								<!-- Block2 -->
-								<div class="block2">
-									<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-										<img src="images/fries.jpg" alt="IMG-PRODUCT" width="200" height="200">
-
-										<div class="block2-overlay trans-0-4">
-											
-											<div class="block2-btn-addcart w-size1 trans-0-4">
-												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Fries', price: 4.00,size:'tiny',thumb:'images/fries.jpg'});">
-													Add to Cart
-												</button>
-											</div>
-										</div>
-									</div>
-
-									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Fries</strong>
-										</a>
-
-										<span class="block2-price m-text6 p-r-5">
-											<strong>RM 4.00</strong>
-										</span>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
-								<!-- Block2 -->
-								<div class="block2">
-									<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-										<img src="images/hashbrown.jpg" alt="IMG-PRODUCT" width="200" height="200">
-
-										<div class="block2-overlay trans-0-4">
-											
-											<div class="block2-btn-addcart w-size1 trans-0-4">
-												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Hash Brown', price: 5.50,size:'tiny',thumb:'images/hashbrown.jpg'});">
-													Add to Cart
-												</button>
-											</div>
-										</div>
-									</div>
-
-									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Hash Brown</strong>
-										</a>
-
-										<span class="block2-price m-text6 p-r-5">
-											<strong>RM 5.50</strong>
-										</span>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
-								<!-- Block2 -->
-								<div class="block2">
-									<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-										<img src="images/cheesYwedges.jpg" alt="IMG-PRODUCT" width="200" height="200">
-
-										<div class="block2-overlay trans-0-4">
-											
-											<div class="block2-btn-addcart w-size1 trans-0-4">
-												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Cheesy Wedges', price: 5.00,size:'tiny',thumb:'images/cheesYwedges.jpg'});">
-													Add to Cart
-												</button>
-											</div>
-										</div>
-									</div>
-
-									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-										<strong>Cheesy Wedges</strong>
-										</a>
-
-										<span class="block2-price m-text6 p-r-5">
-											<strong>RM 5.00</strong>
+											<strong>RM 2.00</strong>
 										</span>
 									</div>
 								</div>
@@ -720,13 +585,13 @@ simpleCart({
 								<!-- Block2 -->
 								<div class="block2">
 									<div class="block2-img wrap-pic-w of-hidden pos-relative">
-										<img src="images/onionring.jpg" alt="IMG-PRODUCT" width="200" height="200">
+										<img src="images/ayamgoreng.jpg" alt="IMG-PRODUCT" width="200" height="200">
 
 										<div class="block2-overlay trans-0-4">
 											
 											<div class="block2-btn-addcart w-size1 trans-0-4">
 												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Onion Rings', price: 4.00,size:'tiny',thumb:'images/onionring.jpg'});">
+												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Ayam Goreng', price: 3.00,size:'tiny',thumb:'images/ayamgoreng.jpg'});">
 													Add to Cart
 												</button>
 											</div>
@@ -735,7 +600,36 @@ simpleCart({
 
 									<div class="block2-txt p-t-20">
 										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Onion Rings</strong>
+											<strong>Ayam Goreng</strong>
+										</a>
+
+										<span class="block2-price m-text6 p-r-5">
+										<strong>RM 3.00</strong>
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
+								<!-- Block2 -->
+								<div class="block2">
+									<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
+										<img src="images/telurbungkus.jpg" alt="IMG-PRODUCT" width="200" height="200">
+
+										<div class="block2-overlay trans-0-4">
+											
+											<div class="block2-btn-addcart w-size1 trans-0-4">
+												<!-- Button -->
+												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Telur Bungkus', price: 4.00,size:'tiny',thumb:'images/telurbungkus.jpg'});">
+													Add to Cart
+												</button>
+											</div>
+										</div>
+									</div>
+
+									<div class="block2-txt p-t-20">
+										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+											<strong>Telur Bungkus</strong>
 										</a>
 
 										<span class="block2-price m-text6 p-r-5">
@@ -744,6 +638,8 @@ simpleCart({
 									</div>
 								</div>
 							</div>
+
+							
 							
 						</div>
 					</div>
@@ -859,6 +755,35 @@ simpleCart({
 	</script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+
+	
+	<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
 
 </body>
 </html>
