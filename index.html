@@ -34,104 +34,104 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
+
+<!-- simplecart script start for normal header -->
+<script src="js/simpleCart.js">
+   
+</script>
+
+<script>
+	simpleCart({
+		cartColumns: [
+		{ view: function(item, column){
+		return  "<li class='header-cart-item'><div class='header-cart-item-img'><img src='"+item.get('thumb')+"' alt='IMG'></div><div class='header-cart-item-txt'><a href='#' class='header-cart-item-name'>" +item.get('name')+"</a><span class='header-cart-item-info'>"+item.get('quantity')+" x RM"+item.get('price')+"</span></div></li>";
+	}, attr: 'custom' },
+	
+		]
+	});
+		
+	</script>
+	
+	<script>
+		simpleCart.currency({
+		  code: "MYR",
+		  name: "Malaysia ringgit",
+		  symbol: "RM",
+		  delimiter: ",",
+		  decimal: ".",
+		  after: false,
+		  accuracy: 2
+		});
+	</script>
+	<script>
+		simpleCart({
+		checkout: { 
+			type: "PayPal" , 
+			email: "ezami321-facilitator@gmail.com" ,
+			// use paypal sandbox, default is false
+			sandbox: true , 
+			// http method for form, "POST" or "GET", default is "POST"
+			method: "GET" , 
+			// url to return to on successful checkout, default is null
+			success: "success.html" , 
+			// url to return to on cancelled checkout, default is null
+			cancel: "cancel.html" 
+		} 
+	});
+	</script>
+	  <!-- simplecart script end  -->
+
 </head>
+ 
+
 <body class="animsition">
 
-	<!-- header fixed -->
-	<div class="wrap_header fixed-header2 trans-0-4">
-		<!-- Logo -->
-		<a href="index.html" class="logo2">
-			<img src="images/icons/logo2.png" alt="IMG-LOGO">
-		</a>
-
-		
-		<!-- Header Icon -->
-		<div class="header-icons">
-			<a href="#" class="header-wrapicon1 dis-block">
-				<img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
+		<!-- header fixed -->
+		<div class="wrap_header fixed-header2 trans-0-4">
+			<!-- Logo -->
+			<a href="index.html" class="logo2">
+				<img src="images/icons/logo2.png" alt="IMG-LOGO">
 			</a>
-
-			<span class="linedivide1"></span>
-
-			<div class="header-wrapicon2">
-				<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-				<span class="header-icons-noti">0</span>
-
-				<!-- Header cart noti -->
-				<div class="header-cart header-dropdown">
-					<ul class="header-cart-wrapitem">
-						<li class="header-cart-item">
-							<div class="header-cart-item-img">
-								<img src="images/item-cart-01.jpg" alt="IMG">
-							</div>
-
-							<div class="header-cart-item-txt">
-								<a href="#" class="header-cart-item-name">
-									White Shirt With Pleat Detail Back
-								</a>
-
-								<span class="header-cart-item-info">
-									1 x $19.00
-								</span>
-							</div>
-						</li>
-
-						<li class="header-cart-item">
-							<div class="header-cart-item-img">
-								<img src="images/item-cart-02.jpg" alt="IMG">
-							</div>
-
-							<div class="header-cart-item-txt">
-								<a href="#" class="header-cart-item-name">
-									Converse All Star Hi Black Canvas
-								</a>
-
-								<span class="header-cart-item-info">
-									1 x $39.00
-								</span>
-							</div>
-						</li>
-
-						<li class="header-cart-item">
-							<div class="header-cart-item-img">
-								<img src="images/item-cart-03.jpg" alt="IMG">
-							</div>
-
-							<div class="header-cart-item-txt">
-								<a href="#" class="header-cart-item-name">
-									Nixon Porter Leather Watch In Tan
-								</a>
-
-								<span class="header-cart-item-info">
-									1 x $17.00
-								</span>
-							</div>
-						</li>
-					</ul>
-
-					<div class="header-cart-total">
-						Total: $75.00
-					</div>
-
-					<div class="header-cart-buttons">
-						<div class="header-cart-wrapbtn">
-							<!-- Button -->
-							<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-								View Cart
-							</a>
+	
+			
+			<!-- Header Icon -->
+			<div class="header-icons">
+				<a href="#" class="header-wrapicon1 dis-block">
+					<img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
+				</a>
+	
+				<span class="linedivide1"></span>
+	
+				<div class="header-wrapicon2">
+					<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+					<span class="header-icons-noti">0</span>
+	
+					<!-- Header cart noti -->
+					<div class="header-cart header-dropdown ">
+						<ul class='header-cart-wrapitem simpleCart_items'>
+						</ul>		
+						<div class="header-cart-total ">
+							SubTotal <p class="simpleCart_total"></p>
 						</div>
-
-						<div class="header-cart-wrapbtn">
-							<!-- Button -->
-							<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-								Check Out
-							</a>
+						<div class="header-cart-buttons">
+							<div class="header-cart-wrapbtn">
+								<!-- Button -->
+								<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+								View Cart
+								</a>
+							</div>
+	
+							<div class="header-cart-wrapbtn">
+								<!-- Button -->
+								<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4 simpleCart_checkout">
+									Check Out
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
 	
 
@@ -153,9 +153,15 @@
 					<img src="images/icons/logo2.png" alt="IMG-LOGO">
 				</a>
 
+				<div class="topbar-child2">
+					<span class="topbar-email">
+						fashe@example.com
+					</span>
+
+					
+
 					<!--  -->
-					<div class="topbar-child2">
-				    <ul class="main_menu">
+					<ul class="main_menu">
 						<li>
 					
 						<img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
@@ -164,9 +170,7 @@
 									<li><a href="signup.html">Sign up</a></li>
 									
 								</ul>
-						</ul>
-						</li>
-						
+						</li></ul>
 					
 
 					<span class="linedivide1"></span>
@@ -176,61 +180,16 @@
 						<span class="header-icons-noti">0</span>
 
 						<!-- Header cart noti -->
-						<div class="header-cart header-dropdown">
-							<ul class="header-cart-wrapitem">
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-01.jpg" alt="IMG">
-									</div>
+						<div class="header-cart header-dropdown ">
+							
 
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											White Shirt With Pleat Detail Back
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $19.00
-										</span>
-									</div>
-								</li>
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-02.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											Converse All Star Hi Black Canvas
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $39.00
-										</span>
-									</div>
-								</li>
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-03.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											Nixon Porter Leather Watch In Tan
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $17.00
-										</span>
-									</div>
-								</li>
-							</ul>
-
-							<div class="header-cart-total">
-								Total: $75.00
+							<div class="header-cart-total ">
+									<ul class='header-cart-wrapitem simpleCart_items'>
+									</ul>
 							</div>
-
+							<div class="header-cart-total ">
+									SubTotal <p class="simpleCart_total"></p>
+								</div>
 							<div class="header-cart-buttons">
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
@@ -257,7 +216,7 @@
 				<div class="wrap_menu">
 					<nav class="menu">
 						<ul class="main_menu">
-							<li class="sale-noti">
+							<li>
 								<a href="index.html">Home</a>
 								
 							</li>
@@ -266,11 +225,11 @@
 								<a href="about.html">About</a>
 							</li>
 
-							<li>
+							<li class ="sale-noti">
 								<a href="fastfood.html">Fast Food</a>
 							</li>
 
-							<li>
+							<li >
 								<a href="localcuisine.html">Local Cuisine</a>
 							</li>
 

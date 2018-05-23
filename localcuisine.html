@@ -37,9 +37,12 @@
 
 
 
-<script src="js/simpleCart.js">
+ <!-- simplecart script start for normal header -->
+
+ <script src="js/simpleCart.js">
    
-</script>
+ </script>
+
 <script>
 simpleCart({
     cartColumns: [
@@ -63,6 +66,24 @@ simpleCart({
       accuracy: 2
     });
 </script>
+<script>
+	simpleCart({
+    checkout: { 
+        type: "PayPal" , 
+        email: "ezami321-facilitator@gmail.com" ,
+        // use paypal sandbox, default is false
+        sandbox: true , 
+        // http method for form, "POST" or "GET", default is "POST"
+        method: "GET" , 
+        // url to return to on successful checkout, default is null
+        success: "success.html" , 
+        // url to return to on cancelled checkout, default is null
+        cancel: "cancel.html" 
+    } 
+});
+</script>
+  <!-- simplecart script end  -->
+
 
   
 </head>
@@ -96,9 +117,63 @@ simpleCart({
 					<img src="images/icons/logo2.png" alt="IMG-LOGO">
 				</a>
 
+				<div class="topbar-child2">
+					<span class="topbar-email">
+						fashe@example.com
+					</span>
+
+					
+
+					<!--  -->
+					<ul class="main_menu">
+						<li>
+					
+						<img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
+						<ul class="sub_menu">
+									<li><a href="login.html">Login</a></li>
+									<li><a href="signup.html">Sign up</a></li>
+									
+								</ul>
+						</li></ul>
+
+					<span class="linedivide1"></span>
+
+					<div class="header-wrapicon2 m-r-13">
+						<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+						<span class="header-icons-noti">0</span>
+
+						<!-- Header cart noti -->
+						<div class="header-cart header-dropdown ">
+							
+
+							<div class="header-cart-total ">
+									<ul class='header-cart-wrapitem simpleCart_items'>
+									</ul>
+							</div>
+							<div class="header-cart-total ">
+									SubTotal <p class="simpleCart_total"></p>
+								</div>
+							<div class="header-cart-buttons">
+								<div class="header-cart-wrapbtn">
+									<!-- Button -->
+									<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+										View Cart
+									</a>
+								</div>
+
+								<div class="header-cart-wrapbtn">
+									<!-- Button -->
+									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+										Check Out
+									</a>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
+		</div>
+	
 			
 			
 			
