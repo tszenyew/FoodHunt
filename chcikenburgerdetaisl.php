@@ -294,7 +294,7 @@ simpleCart({
 			</div>
 
 			<div class="w-size14 p-t-30 respon5">
-				<h4 class="product-detail-name m-text16 p-b-13">
+				<h4 class="product-detail-name block2-name m-text16 p-b-13">
 					Chicken Burger
 				</h4>
 
@@ -425,7 +425,7 @@ simpleCart({
 										</a>
 
 										<span class="block2-price m-text6 p-r-5">
-											<strong>RM 8.50</strong>
+											<strong>RM 8.00</strong>
 										</span>
 									</div>
 								</div>
@@ -571,12 +571,13 @@ simpleCart({
 		$('.btn-addcart').each(function(){
 			var nameProduct = $(this).parent().parent().parent().find('.block2-name').php();
 			var gege = String(nameProduct);
-			var gege2 = gege.substring(20,gege.length-20);
+			var gege2 = gege.substring(25,gege.length-22);
 			$(this).on('click', function(){
 				
 				swal(gege2, "is added to cart !", "success");
 			});
 		});
+		
 		
 		
 
