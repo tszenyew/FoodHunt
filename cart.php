@@ -322,36 +322,31 @@ else {echo'<li><a href="login.php">Login</a></li>
 
 					<div class="w-size20 w-full-sm">
 						<p class="s-text8 p-b-23">
-							There are no shipping methods available. Please double check your address, or contact us if you need any help.
+							Please select your selection for payment 
 						</p>
-
+						<div class="size13 bo4 m-b-12">
+						<input id="cod" type="checkbox" name="delivery" onchange = "codchg(this)"value="cod">Cash on Deilvery<br>
+						</div>
 						<span class="s-text19">
-							Calculate Shipping
+							Enter address
 						</span>
 
-						<div class="rs2-select2 rs3-select2 rs4-select2 bo4 of-hidden w-size21 m-t-8 m-b-12">
-							<select class="selection-2" name="country">
-								<option>Select a country...</option>
-								<option>US</option>
-								<option>UK</option>
-								<option>Japan</option>
-							</select>
-						</div>
-
 						<div class="size13 bo4 m-b-12">
-						<input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="State /  country">
+						<input id ="address1" class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="Address 1">
 						</div>
-
+						<div class="size13 bo4 m-b-12">
+						<input id ="address2" class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="Address 2">
+						</div>
+						<div class="size13 bo4 m-b-12">
+						<input id ="address3" class="sizefull s-text7 p-l-15 p-r-15" type="text" name="postcode" placeholder="Postcode / Zip">
+						</div>
 						<div class="size13 bo4 m-b-22">
-							<input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="postcode" placeholder="Postcode / Zip">
+						<input id ="address4" class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="State">
 						</div>
 
-						<div class="size14 trans-0-4 m-b-10">
-							<!-- Button -->
-							<button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
-								Update Totals
-							</button>
-						</div>
+						
+
+						
 					</div>
 				</div>
 
@@ -426,6 +421,19 @@ else {echo'<li><a href="login.php">Login</a></li>
 	</script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script>
+
+
+	
+	function codchg(element){
+    element.checked ? document.getElementById("address1").disabled = true : document.getElementById("address1").disabled = false;
+	element.checked ? document.getElementById("address2").disabled = true : document.getElementById("address2").disabled = false;
+	element.checked ? document.getElementById("address3").disabled = true : document.getElementById("address3").disabled = false;
+	element.checked ? document.getElementById("address4").disabled = true : document.getElementById("address4").disabled = false;
+
+
+	}
+	</script>
 
 </body>
 </html>
