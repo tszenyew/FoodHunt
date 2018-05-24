@@ -177,16 +177,19 @@ if(isset($_SESSION['loginuser'])){
 							
 		
 							<!--  -->
-							<ul class="main_menu">
-								<li>
-							
-								<img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
-								<ul class="sub_menu">
-											<li><a href="login.php">Login</a></li>
-											<li><a href="signup.php">Sign up</a></li>
-											
-										</ul>
-								</li></ul>
+							<!--  -->
+					<ul class="main_menu">
+						<li>
+					
+						<img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
+						<ul class="sub_menu">
+									<?php if(isset($_SESSION["loginuser"])){
+echo "<li><a href='logout.php'>Logout</a></li>";}
+else {echo'<li><a href="login.php">Login</a></li>
+									<li><a href="signup.php">Sign up</a></li>';}?>
+									
+								</ul>
+						</li></ul>
 	
 		
 							

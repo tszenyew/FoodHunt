@@ -6,10 +6,11 @@ if(isset($_SESSION['loginuser'])){
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Beef Burger Details</title>
+	<title>Double Chicken Burger Details</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -110,9 +111,9 @@ simpleCart({
 			// http method for form, "POST" or "GET", default is "POST"
 			method: "GET" , 
 			// url to return to on successful checkout, default is null
-			success: "success.php" , 
+			success: "success.html" , 
 			// url to return to on cancelled checkout, default is null
-			cancel: "cancel.php" 
+			cancel: "cancel.html" 
 		} 
 	});
 	</script>
@@ -124,7 +125,7 @@ simpleCart({
 	<!-- header fixed -->
 	<div class="wrap_header fixed-header2 trans-0-4">
 		<!-- Logo -->
-		<a href="index.php" class="logo2">
+		<a href="index.html" class="logo2">
 			<img src="images/icons/logo2.png" alt="IMG-LOGO">
 		</a>
 	</div>
@@ -145,13 +146,13 @@ simpleCart({
 				</div>
 
 				<!-- Logo2 -->
-				<a href="index.php" class="logo2">
+				<a href="index.html" class="logo2">
 					<img src="images/icons/logo2.png" alt="IMG-LOGO">
 				</a>
 
 				<div class="topbar-child2">
 					<span class="topbar-email">
-						<?php if(isset($_SESSION["loginuser"])){echo $_SESSION["loginuser"];}?>
+						fashe@example.com
 					</span>
 
 					
@@ -162,13 +163,14 @@ simpleCart({
 					
 						<img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
 						<ul class="sub_menu">
-									<?php if(isset($_SESSION["loginuser"])){
-echo "<li><a href='logout.php'>Logout</a></li>";}
-else {echo'<li><a href="login.php">Login</a></li>
+						<?php if(isset($_SESSION["loginuser"])){
+								echo "<li><a href='logout.php'>Logout</a></li>";}
+							else {echo'<li><a href="login.php">Login</a></li>
 									<li><a href="signup.php">Sign up</a></li>';}?>
 									
 								</ul>
 						</li></ul>
+
 					<span class="linedivide1"></span>
 
 					<div class="header-wrapicon2 m-r-13">
@@ -189,7 +191,7 @@ else {echo'<li><a href="login.php">Login</a></li>
 							<div class="header-cart-buttons">
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="cart.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+									<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
 										View Cart
 									</a>
 								</div>
@@ -257,18 +259,18 @@ else {echo'<li><a href="login.php">Login</a></li>
 
 	<!-- breadcrumb -->
 	<div class="bread-crumb bgwhite flex-w p-l-52 p-r-15 p-t-30 p-l-15-sm">
-		<a href="index.php" class="s-text16">
+		<a href="index.html" class="s-text16">
 			Home
 			<i class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
 		</a>
 
-		<a href="localcuisine.php" class="s-text16">
+		<a href="localcuisine.html" class="s-text16">
 			FastFood
 			<i class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
 		</a>
 
 		<span class="s-text17">
-			Beef Burger
+			Double Chicken Burger
 		</span>
 	</div>
 
@@ -280,21 +282,21 @@ else {echo'<li><a href="login.php">Login</a></li>
 					<div class="wrap-slick3-dots"></div>
 
 					<div class="slick3">
-						<div class="item-slick3" data-thumb="images/beef-burger.jpg">
+						<div class="item-slick3" data-thumb="images/doublechicken.jpg">
 							<div class="wrap-pic-w">
-								<img src="images/beef-burger.jpg" alt="IMG-PRODUCT" width="200" height="350">
+								<img src="images/doublechicken.jpg" alt="IMG-PRODUCT" width="200" height="350">
 							</div>
 						</div>
 
-						<div class="item-slick3" data-thumb="images/beef1.jpg">
+						<div class="item-slick3" data-thumb="images/dchick1.jpg">
 							<div class="wrap-pic-w">
-								<img src="images/beef1.jpg" alt="IMG-PRODUCT" width="200" height="350">
+								<img src="images/dchick1.jpg" alt="IMG-PRODUCT" width="200" height="350">
 							</div>
 						</div>
 
-						<div class="item-slick3" data-thumb="images/beef2.jpg">
+						<div class="item-slick3" data-thumb="images/dchick2.jpg">
 							<div class="wrap-pic-w">
-								<img src="images/beef2.jpg" alt="IMG-PRODUCT" width="200" height="350">
+								<img src="images/dchick2.jpg" alt="IMG-PRODUCT" width="200" height="350">
 							</div>
 						</div>
 					</div>
@@ -303,7 +305,7 @@ else {echo'<li><a href="login.php">Login</a></li>
 
 			<div class="w-size14 p-t-30 respon5">
 				<h4 class="product-detail-name block2-name m-text16 p-b-13">
-					Beef Burger
+					Double Chicken Burger
 				</h4>
 
 				<span class="m-text17">
@@ -342,7 +344,7 @@ else {echo'<li><a href="login.php">Login</a></li>
 
 					<div class="dropdown-content dis-none p-t-15 p-b-23">
 						<p class="s-text8">
-							Burger with quality bun and a mix of beef petty and vegetables. 
+							Burger with quality bun and a mix of double chicken petty and vegetables. 
 						</p>
 					</div>
 				</div>
@@ -356,7 +358,7 @@ else {echo'<li><a href="login.php">Login</a></li>
 			
 				<div class="btn-addcart w-size1 trans-0-4">
 								<!-- Button -->
-									<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Beef Burger', price: 6.50,size:'tiny',thumb:'images/beef-burger.jpg'});">
+									<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Double Chicken Burger', price: 6.50,size:'tiny',thumb:'images/doublechicken.jpg'});">
 										Add to Cart
 									</button>
 							</div>
@@ -382,10 +384,42 @@ else {echo'<li><a href="login.php">Login</a></li>
 						<!-- Block2 -->
 								<div class="block2">
 									<div class="block2-img wrap-pic-w of-hidden pos-relative ">
-										<img src="images/chicken-burger.jpg" alt="IMG-PRODUCT" width="200" height="200">
+										<img src="images/beef-burger.jpg" alt="IMG-PRODUCT" width="200" height="200">
 
 										<div class="block2-overlay trans-0-4">
 										
+											<div class="block2-btn-addcart w-size1 trans-0-4">
+												<!-- Button -->
+												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Beef Burger', price: 6.50,size:'tiny',thumb:'images/beef-burger.jpg'});">
+													Add to Cart
+												</button>
+											</div>
+										</div>
+									</div>
+
+									<div class="block2-txt p-t-20">
+										<a href="beefburgerdetails.php" class="block2-name dis-block s-text3 p-b-5">
+											<strong>Beef Burger</strong>
+										</a>
+
+										<span class="block2-price m-text6 p-r-5">
+											<strong>RM 6.50</strong>
+										</span>
+									</div>
+									
+								</div>
+							</div>
+
+							
+							
+					<div class="item-slick2 p-l-15 p-r-15">
+						<!-- Block2 -->
+								<div class="block2">
+									<div class="block2-img wrap-pic-w of-hidden pos-relative">
+										<img src="images/chicken-burger.jpg" alt="IMG-PRODUCT" width="200" height="200">
+
+										<div class="block2-overlay trans-0-4">
+
 											<div class="block2-btn-addcart w-size1 trans-0-4">
 												<!-- Button -->
 												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Chicken Burger', price: 5.00,size:'tiny',thumb:'images/chicken-burger.jpg'});">
@@ -402,38 +436,6 @@ else {echo'<li><a href="login.php">Login</a></li>
 
 										<span class="block2-price m-text6 p-r-5">
 											<strong>RM 5.00</strong>
-										</span>
-									</div>
-									
-								</div>
-							</div>
-
-							
-							
-					<div class="item-slick2 p-l-15 p-r-15">
-						<!-- Block2 -->
-								<div class="block2">
-									<div class="block2-img wrap-pic-w of-hidden pos-relative">
-										<img src="images/doublebeef.jpg" alt="IMG-PRODUCT" width="200" height="200">
-
-										<div class="block2-overlay trans-0-4">
-
-											<div class="block2-btn-addcart w-size1 trans-0-4">
-												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Double Beef Burger', price: 8.50,size:'tiny',thumb:'images/doublebeef.jpg'});">
-													Add to Cart
-												</button>
-											</div>
-										</div>
-									</div>
-
-									<div class="block2-txt p-t-20">
-										<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Double Beef Burger</strong>
-										</a>
-
-										<span class="block2-price m-text6 p-r-5">
-											<strong>RM 8.00</strong>
 										</span>
 									</div>
 								</div>
@@ -457,7 +459,7 @@ else {echo'<li><a href="login.php">Login</a></li>
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5">
+										<a href="" class="block2-name dis-block s-text3 p-b-5">
 											<strong>Vegetable Burger</strong>
 										</a>
 
@@ -478,7 +480,7 @@ else {echo'<li><a href="login.php">Login</a></li>
 
 											<div class="block2-btn-addcart w-size1 trans-0-4">
 												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Double Chicken Burger', price: 6.50,size:'tiny',thumb:'images/doublechicken.jpg'});">
+												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Double Beef Burger', price: 8.00,size:'tiny',thumb:'images/doublebeef.jpg'});">
 													Add to Cart
 												</button>
 											</div>
@@ -486,14 +488,14 @@ else {echo'<li><a href="login.php">Login</a></li>
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="doublechcikendetails.php" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Double Chicken Burger</strong>
+										<a href="doublebeefdetails.php" class="block2-name dis-block s-text3 p-b-5">
+											<strong>Double Beef Burger</strong>
 										</a>
 
 										
 
 										<span class="block2-price m-text6 p-r-5">
-											<strong>RM 6.50</strong>
+											<strong>RM 8.00</strong>
 										</span>
 									</div>
 								</div>
@@ -579,12 +581,13 @@ else {echo'<li><a href="login.php">Login</a></li>
 		$('.btn-addcart').each(function(){
 			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
 			var gege = String(nameProduct);
-			var gege2 = gege.substring(25,gege.length-22);
+			var gege2 = gege.substring(27,gege.length-27);
 			$(this).on('click', function(){
 				
 				swal(gege2, "is added to cart !", "success");
 			});
 		});
+		
 		
 		
 

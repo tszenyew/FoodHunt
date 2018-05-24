@@ -169,10 +169,18 @@ simpleCart({
 					
 
 					<!--  -->
-					<a href="#" class="header-wrapicon1 dis-block m-l-30">
+					<ul class="main_menu">
+						<li>
+					
 						<img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
-					</a>
-
+						<ul class="sub_menu">
+						<?php if(isset($_SESSION["loginuser"])){
+								echo "<li><a href='logout.php'>Logout</a></li>";}
+							else {echo'<li><a href="login.php">Login</a></li>
+									<li><a href="signup.php">Sign up</a></li>';}?>
+									
+								</ul>
+						</li></ul>
 					<span class="linedivide1"></span>
 
 					<div class="header-wrapicon2 m-r-13">
@@ -619,7 +627,7 @@ simpleCart({
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5">
+										<a href="doublechcikendetails.php" class="block2-name dis-block s-text3 p-b-5">
 											<strong>Double Chicken Burger</strong>
 										</a>
 
