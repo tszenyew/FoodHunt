@@ -1,3 +1,11 @@
+<?php include 'includes/db_connection.php';
+$conn = OpenCon();
+echo "Connected Successfully";
+if(isset($_SESSION['userlogin'])){
+    header("location: index.php");
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -113,14 +121,15 @@ span.psw {
     <div class="container">
 	<h1>Login</h1>
 	<hr>
-	<br>
+    <br>
+    
       <label for="uname"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="uname" required>
 
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
         
-      <button type="submit">Login</button>
+      <button name = "submitsignup" type="submit">Login</button>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>

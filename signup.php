@@ -129,7 +129,7 @@ hr {
 </style>
 <body>
 
-<form class="modal-content animate" action="/action_page.php">
+<form class="modal-content animate" action="verifyLogin.php">
     <div class="container">
       <h1>Sign Up</h1>
      

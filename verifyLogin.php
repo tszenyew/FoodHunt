@@ -2,17 +2,17 @@
 <body>
 <?php  
 //employer
-	if(isset($_POST['submitSignupEmp'])){
+	if(isset($_POST['submitsignup'])){
 		$data_missing = array();
     
-		if(empty($_POST['empemail'])){
-			$data_missing[] = 'empemail';
+		if(empty($_POST['email'])){
+			$data_missing[] = 'email';
 		} else {
-			$empemail = trim($_POST['empemail']);
+			$empemail = trim($_POST['email']);
 		}
 		
-		if(empty($_POST['emppass'])){
-			$data_missing[] = 'emppass';
+		if(empty($_POST['psw'])){
+			$data_missing[] = 'psw';
 		} else {
 			$emppass = trim($_POST['emppass']);
 		}
