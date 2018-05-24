@@ -1,7 +1,15 @@
+<?php include 'includes/db_connection.php';
+$conn = OpenCon();
+echo "Connected Successfully"; session_start();
+if(isset($_SESSION['loginuser'])){
+    echo "s";
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Double Beef Burger Details</title>
+	<title>Contact</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -102,23 +110,61 @@ simpleCart({
 			// http method for form, "POST" or "GET", default is "POST"
 			method: "GET" , 
 			// url to return to on successful checkout, default is null
-			success: "success.html" , 
+			success: "success.php" , 
 			// url to return to on cancelled checkout, default is null
-			cancel: "cancel.html" 
+			cancel: "cancel.php" 
 		} 
 	});
 	</script>
 	  <!-- simplecart script end  -->
-	  
-</head>
+
 <body class="animsition">
 
 	<!-- header fixed -->
 	<div class="wrap_header fixed-header2 trans-0-4">
 		<!-- Logo -->
-		<a href="index.html" class="logo2">
+		<a href="index.php" class="logo2">
 			<img src="images/icons/logo2.png" alt="IMG-LOGO">
 		</a>
+
+		
+		<!-- Header Icon -->
+		<div class="header-icons">
+			<a href="#" class="header-wrapicon1 dis-block">
+				<img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
+			</a>
+
+			<span class="linedivide1"></span>
+
+			<div class="header-wrapicon2">
+				<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+				<span class="header-icons-noti">0</span>
+
+				<!-- Header cart noti -->
+				<div class="header-cart header-dropdown ">
+					<ul class='header-cart-wrapitem simpleCart_items'>
+					</ul>		
+					<div class="header-cart-total ">
+						SubTotal <p class="simpleCart_total"></p>
+					</div>
+					<div class="header-cart-buttons">
+						<div class="header-cart-wrapbtn">
+							<!-- Button -->
+							<a href="cart.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+							View Cart
+							</a>
+						</div>
+
+						<div class="header-cart-wrapbtn">
+							<!-- Button -->
+							<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+								Check Out
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 
@@ -137,21 +183,30 @@ simpleCart({
 				</div>
 
 				<!-- Logo2 -->
-				<a href="index.html" class="logo2">
+				<a href="index.php" class="logo2">
 					<img src="images/icons/logo2.png" alt="IMG-LOGO">
 				</a>
-
+				
 				<div class="topbar-child2">
 					<span class="topbar-email">
-						fashe@example.com
+						<?php if(isset($_SESSION["loginuser"])){echo $_SESSION["loginuser"];}?>
 					</span>
 
 					
 
 					<!--  -->
-					<a href="#" class="header-wrapicon1 dis-block m-l-30">
+					<ul class="main_menu">
+						<li>
+					
 						<img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
-					</a>
+						<ul class="sub_menu">
+						<?php if(isset($_SESSION["loginuser"])){
+								echo "<li><a href='logout.php'>Logout</a></li>";}
+							else {echo'<li><a href="login.php">Login</a></li>
+									<li><a href="signup.php">Sign up</a></li>';}?>
+									
+								</ul>
+						</li></ul>
 
 					<span class="linedivide1"></span>
 
@@ -173,14 +228,14 @@ simpleCart({
 							<div class="header-cart-buttons">
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+									<a href="cart.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
 										View Cart
 									</a>
 								</div>
 
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4 simpleCart_checkout">
 										Check Out
 									</a>
 								</div>
@@ -189,7 +244,8 @@ simpleCart({
 					</div>
 				</div>
 			</div>
-			
+		</div>
+	</div>
 			
 			
 			
@@ -205,24 +261,24 @@ simpleCart({
 								
 							</li>
 
-							<li >
-								<a href="about.html">About</a>
+							<li>
+								<a href="about.php">About</a>
 							</li>
 
-							<li class ="sale-noti">
+							<li >
 								<a href="fastfood.php">Fast Food</a>
 							</li>
 
-							<li>
+							<li >
 								<a href="localcuisine.php">Local Cuisine</a>
 							</li>
 
 							<li>
-								<a href="cart.html">Cart</a>
+								<a href="cart.php">Cart</a>
 							</li>
 
-							<li>
-								<a href="contact.html">Contact</a>
+							<li class ="sale-noti">
+								<a href="contact.php">Contact</a>
 							</li>
 
 							
@@ -237,266 +293,115 @@ simpleCart({
 			</div>
 		</div>
 
-	</header>
+		<!-- Header Mobile -->
+		<div class="wrap_header_mobile">
+			<!-- Logo moblie -->
+			<a href="index.php" class="logo-mobile">
+				<img src="images/icons/logo2.png" alt="IMG-LOGO">
+			</a>
 
-	<!-- breadcrumb -->
-	<div class="bread-crumb bgwhite flex-w p-l-52 p-r-15 p-t-30 p-l-15-sm">
-		<a href="index.html" class="s-text16">
-			Home
-			<i class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
-		</a>
+			<!-- Button show menu -->
+			<div class="btn-show-menu">
+				<!-- Header Icon mobile -->
+				<div class="header-icons-mobile">
+					<a href="#" class="header-wrapicon1 dis-block">
+						<img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
+					</a>
 
-		<a href="localcuisine.html" class="s-text16">
-			FastFood
-			<i class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
-		</a>
+					<span class="linedivide2"></span>
 
-		<span class="s-text17">
-			Double Beef Burger
-		</span>
-	</div>
+					<div class="header-wrapicon2">
+						<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+						<span class="header-icons-noti">0</span>
 
-	<!-- Product Detail -->
-	<div class="container bgwhite p-t-35 p-b-80">
-		<div class="flex-w flex-sb">
-			<div class="w-size13 p-t-30 respon5">
-				<div class="wrap-slick3 flex-sb flex-w">
-					<div class="wrap-slick3-dots"></div>
+						<!-- Header cart noti -->
+						<div class="header-cart header-dropdown">
+								<ul class="header-cart-wrapitem ">
+								</ul>
 
-					<div class="slick3">
-						<div class="item-slick3" data-thumb="images/doublebeef.jpg">
-							<div class="wrap-pic-w">
-								<img src="images/doublebeef.jpg" alt="IMG-PRODUCT" width="200" height="350">
+							<div class="header-cart-total item-total">
+								
 							</div>
-						</div>
 
-						<div class="item-slick3" data-thumb="images/dbeef1.jpg">
-							<div class="wrap-pic-w">
-								<img src="images/dbeef1.jpg" alt="IMG-PRODUCT" width="200" height="350">
-							</div>
-						</div>
+							<div class="header-cart-buttons">
+								<div class="header-cart-wrapbtn">
+									<!-- Button -->
+									<a href="cart.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+										View Cart
+									</a>
+								</div>
 
-						<div class="item-slick3" data-thumb="images/dbeef2.jpg">
-							<div class="wrap-pic-w">
-								<img src="images/dbeef2.jpg" alt="IMG-PRODUCT" width="200" height="350">
+								<div class="header-cart-wrapbtn">
+									<!-- Button -->
+									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+										Check Out
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
+				</div>
+
+				<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
 				</div>
 			</div>
-
-			<div class="w-size14 p-t-30 respon5">
-				<h4 class="product-detail-name block2-name m-text16 p-b-13">
-					Double Beef Burger
-				</h4>
-
-				<span class="m-text17">
-					RM 8.00
-				</span>
-
-				
-
-				<!--  -->
-				<div class="p-t-33 p-b-60">
-					<div class="flex-m flex-w p-b-10">
-					
-					</div>
-
-					<div class="flex-m flex-w">
-						
-					</div>
-
-					<div class="flex-r-m flex-w p-t-10">
-						<div class="w-size16 flex-m flex-w">
-							
-
-							
-						</div>
-					</div>
-			
-				
-
-				<!--  -->
-				<div class="wrap-dropdown-content bo6 p-t-15 p-b-14 active-dropdown-content">
-					<h5 class="js-toggle-dropdown-content flex-sb-m cs-pointer m-text19 color0-hov trans-0-4">
-						Description
-						<i class="down-mark fs-12 color1 fa fa-minus dis-none" aria-hidden="true"></i>
-						<i class="up-mark fs-12 color1 fa fa-plus" aria-hidden="true"></i>
-					</h5>
-
-					<div class="dropdown-content dis-none p-t-15 p-b-23">
-						<p class="s-text8">
-							Burger with quality bun and a mix of double beef petty and vegetables. 
-						</p>
-					</div>
-				</div>
-
-				
-
-				
-				</div>
-				
-				
-			
-				<div class="btn-addcart w-size1 trans-0-4">
-								<!-- Button -->
-									<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Double Beef Burger', price: 8.00,size:'tiny',thumb:'images/doublebeef.jpg'});">
-										Add to Cart
-									</button>
-							</div>
-			
 		</div>
-	</div>
 
+	<!-- Title Page -->
+	<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(images/bg.jpg);">
+		<h2 class="l-text2 t-center">
+			Contact Us
+		</h2>
+	</section>
 
-	<!-- Relate Product -->
-	<section class="relateproduct bgwhite p-t-45 p-b-138">
+	<!-- content page -->
+	<section class="bgwhite p-t-66 p-b-60">
 		<div class="container">
-			<div class="sec-title p-b-60">
-				<h3 class="m-text5 t-center">
-					Related Menu
-				</h3>
-			</div>
+			<div class="row">
+				<div class="col-md-6 p-b-30">
+					<div class="p-r-20 p-r-0-lg">
+						<div class="contact-map size21" id="google_map" data-map-x="2.9952466" data-map-y="101.7199902" data-pin="images/icons/logo3.png" data-scrollwhell="0" data-draggable="1"></div>
+					</div>
+				</div>
 
-			<!-- Slide2 -->
-			<div class="wrap-slick2">
-				<div class="slick2">
+				<div class="col-md-6 p-b-30">
+					<form class="leave-comment">
+						<h4 class="m-text26 p-b-36 p-t-15">
+							Send us your message
+						</h4>
 
-					<div class="item-slick2 p-l-15 p-r-15">
-						<!-- Block2 -->
-								<div class="block2">
-									<div class="block2-img wrap-pic-w of-hidden pos-relative ">
-										<img src="images/beef-burger.jpg" alt="IMG-PRODUCT" width="200" height="200">
+						<div class="bo4 of-hidden size15 m-b-20">
+							<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="name" placeholder="Full Name">
+						</div>
 
-										<div class="block2-overlay trans-0-4">
-										
-											<div class="block2-btn-addcart w-size1 trans-0-4">
-												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Beef Burger', price: 6.50,size:'tiny',thumb:'images/beef-burger.jpg'});">
-													Add to Cart
-												</button>
-											</div>
-										</div>
-									</div>
+						<div class="bo4 of-hidden size15 m-b-20">
+							<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="phone-number" placeholder="Phone Number">
+						</div>
 
-									<div class="block2-txt p-t-20">
-										<a href="beefburgerdetails.html" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Beef Burger</strong>
-										</a>
+						<div class="bo4 of-hidden size15 m-b-20">
+							<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="email" placeholder="Email Address">
+						</div>
 
-										<span class="block2-price m-text6 p-r-5">
-											<strong>RM 6.50</strong>
-										</span>
-									</div>
-									
-								</div>
-							</div>
+						<textarea class="dis-block s-text7 size20 bo4 p-l-22 p-r-22 p-t-13 m-b-20" name="message" placeholder="Message"></textarea>
 
-							
-							
-					<div class="item-slick2 p-l-15 p-r-15">
-						<!-- Block2 -->
-								<div class="block2">
-									<div class="block2-img wrap-pic-w of-hidden pos-relative">
-										<img src="images/chicken-burger.jpg" alt="IMG-PRODUCT" width="200" height="200">
-
-										<div class="block2-overlay trans-0-4">
-
-											<div class="block2-btn-addcart w-size1 trans-0-4">
-												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Chicken Burger', price: 5.00,size:'tiny',thumb:'images/chicken-burger.jpg'});">
-													Add to Cart
-												</button>
-											</div>
-										</div>
-									</div>
-
-									<div class="block2-txt p-t-20">
-										<a href="chcikenburgerdetaisl.html" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Chicken Burger</strong>
-										</a>
-
-										<span class="block2-price m-text6 p-r-5">
-											<strong>RM 5.00</strong>
-										</span>
-									</div>
-								</div>
-							</div>
-
-					<div class="item-slick2 p-l-15 p-r-15">
-						<!-- Block2 -->
-								<div class="block2">
-									<div class="block2-img wrap-pic-w of-hidden pos-relative">
-										<img src="images/veg-burger.jpg" alt="IMG-PRODUCT" width="200" height="200">
-
-										<div class="block2-overlay trans-0-4">
-
-											<div class="block2-btn-addcart w-size1 trans-0-4">
-												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Vegetable Burger', price: 6.00,size:'tiny',thumb:'images/veg-burger.jpg'});">
-													Add to Cart
-												</button>
-											</div>
-										</div>
-									</div>
-
-									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Vegetable Burger</strong>
-										</a>
-
-										<span class="block2-price m-text6 p-r-5">
-											<strong>RM 6.00</strong>
-										</span>
-									</div>
-								</div>
-							</div>
-
-					<div class="item-slick2 p-l-15 p-r-15">
-						<!-- Block2 -->
-								<div class="block2">
-									<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-										<img src="images/doublechicken.jpg" alt="IMG-PRODUCT" width="200" height="200">
-
-										<div class="block2-overlay trans-0-4">
-
-											<div class="block2-btn-addcart w-size1 trans-0-4">
-												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Double Chicken Burger', price: 6.50,size:'tiny',thumb:'images/doublechicken.jpg'});">
-													Add to Cart
-												</button>
-											</div>
-										</div>
-									</div>
-
-									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Double Chicken Burger</strong>
-										</a>
-
-										
-
-										<span class="block2-price m-text6 p-r-5">
-											<strong>RM 6.50</strong>
-										</span>
-									</div>
-								</div>
-							</div>
-							
-							
-
-					
-
-					
+						<div class="w-size25">
+							<!-- Button -->
+							<button class="flex-c-m size2 bg1 bo-rad-23 hov1 m-text3 trans-0-4">
+								Send
+							</button>
+						</div>
+					</form>
 				</div>
 			</div>
-
 		</div>
 	</section>
 
 
-
-
+	<!-- Footer -->
+	<footer>
 			<div class="t-center s-text8 p-t-20">
 				Copyright © 2018 All rights reserved. | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 			</div>
@@ -538,44 +443,9 @@ simpleCart({
 			dropdownParent: $('#dropDownSelect2')
 		});
 	</script>
-	
-	
 <!--===============================================================================================-->
-	<script type="text/javascript" src="vendor/daterangepicker/moment.min.js"></script>
-	<script type="text/javascript" src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script type="text/javascript" src="vendor/slick/slick.min.js"></script>
-	<script type="text/javascript" src="js/slick-custom.js"></script>
-<!--===============================================================================================-->
-	<script type="text/javascript" src="vendor/sweetalert/sweetalert.min.js"></script>
-	<script type="text/javascript">
-		$('.block2-btn-addcart').each(function(){
-			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
-			var gege = String(nameProduct);
-			var gege2 = gege.substring(20,gege.length-20);
-			$(this).on('click', function(){
-				
-				swal(gege2, "is added to cart !", "success");
-			});
-		});
-		
-		
-		$('.btn-addcart').each(function(){
-			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
-			var gege = String(nameProduct);
-			var gege2 = gege.substring(25,gege.length-25);
-			$(this).on('click', function(){
-				
-				swal(gege2, "is added to cart !", "success");
-			});
-		});
-		
-		
-		
-
-		
-	</script>
-
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
+	<script src="js/map-custom.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
 

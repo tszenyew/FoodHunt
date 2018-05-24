@@ -1,3 +1,13 @@
+<?php include 'includes/db_connection.php';
+$conn = OpenCon();
+echo "Connected Successfully";
+session_start();
+if(isset($_SESSION['loginuser'])){
+    header("location: index.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <style>
@@ -129,7 +139,7 @@ hr {
 </style>
 <body>
 
-<form class="modal-content animate" action="verifyLogin.php">
+<form id="signupform" class="modal-content animate" action="verifyLogin.php" onsubmit="return signupValidation()" method="post">
     <div class="container">
       <h1>Sign Up</h1>
      
@@ -137,23 +147,23 @@ hr {
 	  <br>
 	  
       <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
-
+      <input id = "signupInputEmail" type="text" placeholder="Enter Email" name="signupInputEmail" required>
+        <p id="vfailemail"></p>
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-
+      <input id="signupInputPassword1" type="password" placeholder="Enter Password" name="signupInputPassword1" required>
+      <p id = "vfailpw"></p>
       <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-      
+      <input id="signupInputPassword2" type="password" placeholder="Repeat Password" name="signupInputPassword2" required>
+      <p id = "vfailpw2"></p>
       <label>
         <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
       </label>
-
+      <input type="hidden" name = "submitsignup">
       <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
       <div class="clearfix">
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn">Sign Up</button>
+        <button type="button" class="signupbtn" onclick="return signupValidation()">Sign Up</button>
       </div>
     </div>
   </form>
@@ -161,4 +171,70 @@ hr {
 
 
 </body>
+
+<script>
+  function signupValidation() {
+    mailValidation();
+    pwValidation();
+    pwMatch();
+    if(mailValidation() && pwValidation() && pwMatch()) {
+        document.getElementById("signupform").submit();
+    }
+    else{
+      return false;
+    }
+  }
+</script>
+<script>
+  var txtemail="Please enter your email address";
+  function mailValidation(){
+    var inputEmail = document.getElementById("signupInputEmail").value;
+    if(inputEmail.length < 6 ) {
+      document.getElementById("vfailemail").innerHTML = txtemail;
+      document.getElementById("signupInputEmail").style.borderColor = "#E34234";
+    }
+    else{
+      document.getElementById("vfailemail").innerHTML = null ;
+      document.getElementById("signupInputEmail").style.borderColor = "#008000";
+      return true;
+    }
+  }
+</script>
+<script>
+  var txtpw1="Password must between 6 character to 15 character";
+  function pwValidation(){
+    var inputpw1 = document.getElementById("signupInputPassword1").value;
+    if(inputpw1.length < 6 || inputpw1.length > 15){
+      document.getElementById("vfailpw").innerHTML = txtpw1 ;
+      document.getElementById("signupInputPassword1").style.borderColor = "#E34234";
+      document.getElementById("signupInputPassword2").style.borderColor = "#E34234";
+    }
+    else{
+      document.getElementById("vfailpw").innerHTML = null ;
+      document.getElementById("signupInputPassword1").style.borderColor = "#008000";
+      return true;
+    }
+  }
+</script>
+<script>
+  var txtpwmiss="Password missmatch";
+  function pwMatch(){
+    var inputpw1 = document.getElementById("signupInputPassword1").value;
+    var inputpw2 = document.getElementById("signupInputPassword2").value;
+    if(inputpw1=="" || inputpw2 != inputpw1 ){
+      document.getElementById("vfailpw2").innerHTML = txtpwmiss ;
+      document.getElementById("signupInputPassword2").style.borderColor = "#E34234";
+    }
+    else{
+      document.getElementById("vfailpw2").innerHTML = null ;
+      document.getElementById("signupInputPassword2").style.borderColor = "#008000";
+      return true;
+    }
+  }
+</script>
+
+
+
+
+
 </html>

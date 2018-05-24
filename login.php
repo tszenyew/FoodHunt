@@ -1,6 +1,6 @@
 <?php include 'includes/db_connection.php';
 $conn = OpenCon();
-echo "Connected Successfully";
+echo "Connected Successfully"; session_start();
 if(isset($_SESSION['userlogin'])){
     header("location: index.php");
 }
@@ -115,7 +115,7 @@ span.psw {
 
 
   
-  <form class="modal-content animate" action="/action_page.php">
+  <form id="loginform" class="modal-content animate" action="verifyLogin.php"  method="post" >
     
 
     <div class="container">
@@ -123,13 +123,13 @@ span.psw {
 	<hr>
     <br>
     
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Username" name="loginemail" required>
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-        
-      <button name = "submitsignup" type="submit">Login</button>
+      <input type="password" placeholder="Enter Password" name="loginpsw" required>
+      <input type="hidden" name="loginsubmit">
+      <button  type="submit" >Login</button>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
