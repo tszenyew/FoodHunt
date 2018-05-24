@@ -1,3 +1,11 @@
+<?php include 'includes/db_connection.php';
+$conn = OpenCon();
+echo "Connected Successfully"; session_start();
+if(isset($_SESSION['loginuser'])){
+    echo "s";
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,9 +85,9 @@
         // http method for form, "POST" or "GET", default is "POST"
         method: "GET" , 
         // url to return to on successful checkout, default is null
-        success: "success.html" , 
+        success: "success.php" , 
         // url to return to on cancelled checkout, default is null
-        cancel: "cancel.html" 
+        cancel: "cancel.php" 
     } 
 });
 </script>
@@ -91,7 +99,7 @@
 	<!-- header fixed -->
 	<div class="wrap_header fixed-header2 trans-0-4">
 		<!-- Logo -->
-		<a href="index.html" class="logo2">
+		<a href="index.php" class="logo2">
 			<img src="images/icons/logo2.png" alt="IMG-LOGO">
 		</a>
 				<!-- Header Icon -->
@@ -101,8 +109,10 @@
 					
 						<img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
 						<ul class="sub_menu">
-									<li><a href="login.html">Login</a></li>
-									<li><a href="signup.html">Sign up</a></li>
+						<?php if(isset($_SESSION["loginuser"])){
+								echo "<li><a href='logout.php'>Logout</a></li>";}
+							else {echo'<li><a href="login.php">Login</a></li>
+									<li><a href="signup.php">Sign up</a></li>';}?>
 									
 								</ul>
 						</li></ul>
@@ -123,7 +133,7 @@
 							<div class="header-cart-buttons">
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+									<a href="cart.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
 									View Cart
 									</a>
 								</div>
@@ -156,12 +166,12 @@
 						</div>
 
 						<!-- Logo2 -->
-						<a href="index.html" class="logo2">
+						<a href="index.php" class="logo2">
 							<img src="images/icons/logo2.png" alt="IMG-LOGO">
 						</a>
 						<div class="topbar-child2">
 							<span class="topbar-email">
-								fashe@example.com
+								<?php if(isset($_SESSION["loginuser"])){echo $_SESSION["loginuser"];}?>
 							</span>
 		
 							
@@ -172,8 +182,8 @@
 							
 								<img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
 								<ul class="sub_menu">
-											<li><a href="login.html">Login</a></li>
-											<li><a href="signup.html">Sign up</a></li>
+											<li><a href="login.php">Login</a></li>
+											<li><a href="signup.php">Sign up</a></li>
 											
 										</ul>
 								</li></ul>
@@ -195,28 +205,28 @@
 					<nav class="menu">
 						<ul class="main_menu">
 							<li>
-								<a href="index.html">Home</a>
+								<a href="index.php">Home</a>
 								
 							</li>
 
 							<li>
-								<a href="about.html">About</a>
+								<a href="about.php">About</a>
 							</li>
 
 							<li>
-								<a href="fastfood.html">Fast Food</a>
+								<a href="fastfood.php">Fast Food</a>
 							</li>
 
 							<li>
-								<a href="localcuisine.html">Local Cuisine</a>
+								<a href="localcuisine.php">Local Cuisine</a>
 							</li>
 
 							<li class ="sale-noti">
-								<a href="cart.html">Cart</a>
+								<a href="cart.php">Cart</a>
 							</li>
 
 							<li>
-								<a href="contact.html">Contact</a>
+								<a href="contact.php">Contact</a>
 							</li>
 
 							

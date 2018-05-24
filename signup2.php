@@ -148,7 +148,7 @@
 
             <div class="col-md-6">
               <h2 class="product-title">I'm an Applicant</h2>
-              <form action="verifyLogin.php" onsubmit="return signupValidation1()" method="post" class="probootstrap-form probootstrap-form-box mb60">
+              <form id="signupform" action="verifyLogin.php" method="post" class="probootstrap-form probootstrap-form-box mb60">
                 <div class="form-group">
                   <p class="editfield">
                     <label for="signupInputEmail1" style="color: white">Email</label><br>
@@ -172,7 +172,7 @@
                   </p>
                 </div>
                 <div class="form-group">
-                  <input type="submit" class="btn btn-primary" id="submitSignupApp" name="submitSignupApp" value="Sign up">
+                  <button class="btn btn-primary" id="submitSignupApp" name="submitSignupApp" value="Sign up">
                 </div>
               </form>
             </div>
@@ -277,7 +277,7 @@
     pwValidation1();
     pwMatch1();
     if(mailValidation1() && pwValidation1() && pwMatch1() && phoneValidation1()) {
-      return true;
+      $("#signupform").submit();
     }
     else{
       return false;
