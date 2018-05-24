@@ -628,7 +628,7 @@ simpleCart({
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5">
+										<a href="doublechcikendetails.php" class="block2-name dis-block s-text3 p-b-5">
 											<strong>Double Chicken Burger</strong>
 										</a>
 

@@ -1,3 +1,12 @@
+<?php include 'includes/db_connection.php';
+$conn = OpenCon();
+echo "Connected Successfully"; session_start();
+if(isset($_SESSION['loginuser'])){
+    echo "s";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -206,7 +215,7 @@ simpleCart({
 							</li>
 
 							<li >
-								<a href="about.html">About</a>
+								<a href="about.php">About</a>
 							</li>
 
 							<li class ="sale-noti">
@@ -218,11 +227,11 @@ simpleCart({
 							</li>
 
 							<li>
-								<a href="cart.html">Cart</a>
+								<a href="cart.php">Cart</a>
 							</li>
 
 							<li>
-								<a href="contact.html">Contact</a>
+								<a href="contact.php">Contact</a>
 							</li>
 
 							
@@ -380,7 +389,7 @@ simpleCart({
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="beefburgerdetails.html" class="block2-name dis-block s-text3 p-b-5">
+										<a href="beefburgerdetails.php" class="block2-name dis-block s-text3 p-b-5">
 											<strong>Beef Burger</strong>
 										</a>
 
@@ -412,7 +421,7 @@ simpleCart({
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="chcikenburgerdetaisl.html" class="block2-name dis-block s-text3 p-b-5">
+										<a href="chcikenburgerdetaisl.php" class="block2-name dis-block s-text3 p-b-5">
 											<strong>Chicken Burger</strong>
 										</a>
 
@@ -441,7 +450,7 @@ simpleCart({
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+										<a href="" class="block2-name dis-block s-text3 p-b-5">
 											<strong>Vegetable Burger</strong>
 										</a>
 
@@ -470,7 +479,7 @@ simpleCart({
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="doublebeefdetails.html" class="block2-name dis-block s-text3 p-b-5">
+										<a href="doublebeefdetails.php" class="block2-name dis-block s-text3 p-b-5">
 											<strong>Double Beef Burger</strong>
 										</a>
 

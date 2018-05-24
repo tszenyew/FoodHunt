@@ -229,7 +229,7 @@ if(isset($_SESSION['loginuser'])){
 				<div class="wrap_menu">
 					<nav class="menu">
 						<ul class="main_menu">
-							<li>
+							<li class ="sale-noti">
 								<a href="index.php">Home</a>
 								
 							</li>
@@ -238,7 +238,7 @@ if(isset($_SESSION['loginuser'])){
 								<a href="about.php">About</a>
 							</li>
 
-							<li class ="sale-noti">
+							<li >
 								<a href="fastfood.php">Fast Food</a>
 							</li>
 
