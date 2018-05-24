@@ -1,6 +1,6 @@
 <?php include 'includes/db_connection.php';
 $conn = OpenCon();
-echo "Connected Successfully"; session_start();
+ session_start();
 if(isset($_SESSION['loginuser'])){
     echo "s";
 }
@@ -566,7 +566,7 @@ else {echo'<li><a href="login.php">Login</a></li>
 	<script type="text/javascript" src="vendor/sweetalert/sweetalert.min.js"></script>
 	<script type="text/javascript">
 		$('.block2-btn-addcart').each(function(){
-			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
+			var nameProduct = $(this).parent().parent().parent().find('.block2-name').php();
 			var gege = String(nameProduct);
 			var gege2 = gege.substring(20,gege.length-20);
 			$(this).on('click', function(){
@@ -577,7 +577,7 @@ else {echo'<li><a href="login.php">Login</a></li>
 		
 		
 		$('.btn-addcart').each(function(){
-			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
+			var nameProduct = $(this).parent().parent().parent().find('.block2-name').php();
 			var gege = String(nameProduct);
 			var gege2 = gege.substring(25,gege.length-22);
 			$(this).on('click', function(){
