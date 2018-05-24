@@ -1,11 +1,4 @@
-<?php include 'includes/db_connection.php';
-$conn = OpenCon();
-echo "Connected Successfully"; session_start();
-if(isset($_SESSION['loginuser'])){
-    echo "s";
-}
 
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -109,10 +102,8 @@ simpleCart({
 			
 				<img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
 				<ul class="sub_menu">
-				<?php if(isset($_SESSION["loginuser"])){
-								echo "<li><a href='logout.php'>Logout</a></li>";}
-							else {echo'<li><a href="login.php">Login</a></li>
-									<li><a href="signup.php">Sign up</a></li>';}?>
+							<li><a href="login.php">Login</a></li>
+							<li><a href="signup.php">Sign up</a></li>
 							
 						</ul>
 				</li></ul>
@@ -1088,7 +1079,7 @@ simpleCart({
 	<script type="text/javascript" src="vendor/sweetalert/sweetalert.min.js"></script>
 	<script type="text/javascript">
 		$('.block2-btn-addcart').each(function(){
-			var nameProduct = $(this).parent().parent().parent().find('.block2-name').php();
+			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
 			var gege = String(nameProduct);
 			var gege2 = gege.substring(20,gege.length-20);
 			$(this).on('click', function(){
@@ -1098,7 +1089,7 @@ simpleCart({
 		});
 
 		$('.block2-btn-addwishlist').each(function(){
-			var nameProduct = $(this).parent().parent().parent().find('.block2-name').php();
+			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
 			var gege = String(nameProduct);
 			var gege2 = gege.substring(20,gege.length-20);
 			$(this).on('click', function(){

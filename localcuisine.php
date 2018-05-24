@@ -794,7 +794,7 @@ simpleCart({
 	<script type="text/javascript" src="vendor/sweetalert/sweetalert.min.js"></script>
 	<script type="text/javascript">
 		$('.block2-btn-addcart').each(function(){
-			var nameProduct = $(this).parent().parent().parent().find('.block2-name').php();
+			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
 			var gege = String(nameProduct);
 			var gege2 = gege.substring(20,gege.length-20);
 			$(this).on('click', function(){
@@ -804,7 +804,7 @@ simpleCart({
 		});
 
 		$('.block2-btn-addwishlist').each(function(){
-			var nameProduct = $(this).parent().parent().parent().find('.block2-name').php();
+			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
 			var gege = String(nameProduct);
 			var gege2 = gege.substring(20,gege.length-20);
 			$(this).on('click', function(){
