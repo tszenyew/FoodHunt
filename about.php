@@ -249,11 +249,13 @@ else {echo'<li><a href="login.php">Login</a></li>
 					</h3>
 
 					<p class="p-b-28">
-						Everyone has a story to tell and like all humble beginnings, <strong>FoodHunts</strong> Restaurant started open in January 2018. For the online delivery food, we started in May 2018.
-						<br><br>As a university student we faced problem of buying food in the university campus on some specific occassion, to solve those problem we come out with <strong>FoodHunts</strong>.
-						We want to provide tasty food to the customer within a quick time and with a easy payment system
-						<br><br>Our business is not only about providing quick meals. It’s always been about you – your tastes, your lifestyle, your choices. And we’d like to keep it that way, with you lovin’ every moment of it.
-						<br><br>This is why we put our heart and soul into each and every one of our delicious, wholesome meals. Each ‘mmm’ and ‘ahhh’ from you is thanks enough. As you change and grow, we’ll be with you every step of the way, as the <strong>FoodHunts</strong> you have come to know and love, Today and tomorrow.
+						
+						Everyone has a story to tell and like all humble beginnings, <strong>FoodHunts</strong> started from a group of deddicated students. The delivery services started in May 2018. It was an idea from 4 university students who had similar problem of getting food.
+						<br><br>This was not exclusive to them so they decided to start <strong>FoodHunts</strong> to provide a delivery service for the hungry students as well as a chance to start a new business.
+						Our aim is to provide a variety of food choices to student with a simple delivery and payment system. We want to provide convenient at a fair price. 	
+						<br><br>Our priority is not just about delivering fast meals. We've always care about our customer, about their choices and sastifactions . 
+						<br><br>We put our heart and soul into each and every one of our delicious, wholesome meals. So, don't hesitate and order with us. <strong>FoodHunts</strong>, will do all the heavy work for you, so you can enjoy your food in comfort.
+					
 					</p>
 
 					<div class="bo13 p-l-29 m-l-9 p-b-10">
