@@ -2,7 +2,7 @@
 $conn = OpenCon();
  session_start();
 if(isset($_SESSION['loginuser'])){
-    echo "s";
+  
 }
 
 ?>

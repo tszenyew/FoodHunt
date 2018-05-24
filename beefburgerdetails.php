@@ -2,7 +2,7 @@
 $conn = OpenCon();
  session_start();
 if(isset($_SESSION['loginuser'])){
-    echo "s";
+  
 }
 
 ?>
@@ -428,7 +428,7 @@ else {echo'<li><a href="login.php">Login</a></li>
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5">
+										<a href="doublebeefdetails.php" class="block2-name dis-block s-text3 p-b-5">
 											<strong>Double Beef Burger</strong>
 										</a>
 
