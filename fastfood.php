@@ -1,3 +1,11 @@
+<?php include 'includes/db_connection.php';
+$conn = OpenCon();
+echo "Connected Successfully"; session_start();
+if(isset($_SESSION['loginuser'])){
+    echo "s";
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,9 +83,9 @@ simpleCart({
         // http method for form, "POST" or "GET", default is "POST"
         method: "GET" , 
         // url to return to on successful checkout, default is null
-        success: "success.html" , 
+        success: "success.php" , 
         // url to return to on cancelled checkout, default is null
-        cancel: "cancel.html" 
+        cancel: "cancel.php" 
     } 
 });
 </script>
@@ -89,7 +97,7 @@ simpleCart({
 	<!-- header fixed -->
 	<div class="wrap_header fixed-header2 trans-0-4">
 		<!-- Logo -->
-		<a href="index.html" class="logo2">
+		<a href="index.php" class="logo2">
 			<img src="images/icons/logo2.png" alt="IMG-LOGO">
 		</a>
 
@@ -101,8 +109,10 @@ simpleCart({
 			
 				<img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
 				<ul class="sub_menu">
-							<li><a href="login.html">Login</a></li>
-							<li><a href="signup.html">Sign up</a></li>
+				<?php if(isset($_SESSION["loginuser"])){
+								echo "<li><a href='logout.php'>Logout</a></li>";}
+							else {echo'<li><a href="login.php">Login</a></li>
+									<li><a href="signup.php">Sign up</a></li>';}?>
 							
 						</ul>
 				</li></ul>
@@ -123,7 +133,7 @@ simpleCart({
 					<div class="header-cart-buttons">
 						<div class="header-cart-wrapbtn">
 							<!-- Button -->
-							<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+							<a href="cart.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
 							View Cart
 							</a>
 						</div>
@@ -156,13 +166,13 @@ simpleCart({
 				</div>
 
 				<!-- Logo2 -->
-				<a href="index.html" class="logo2">
+				<a href="index.php" class="logo2">
 					<img src="images/icons/logo2.png" alt="IMG-LOGO">
 				</a>
 
 				<div class="topbar-child2">
 					<span class="topbar-email">
-						fashe@example.com
+						<?php if(isset($_SESSION["loginuser"])){echo $_SESSION["loginuser"];}?>
 					</span>
 
 					
@@ -192,7 +202,7 @@ simpleCart({
 							<div class="header-cart-buttons">
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+									<a href="cart.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
 										View Cart
 									</a>
 								</div>
@@ -216,28 +226,28 @@ simpleCart({
 					<nav class="menu">
 						<ul class="main_menu">
 							<li>
-								<a href="index.html">Home</a>
+								<a href="index.php">Home</a>
 								
 							</li>
 
 							<li>
-								<a href="about.html">About</a>
+								<a href="about.php">About</a>
 							</li>
 
 							<li class ="sale-noti">
-								<a href="fastfood.html">Fast Food</a>
+								<a href="fastfood.php">Fast Food</a>
 							</li>
 
 							<li >
-								<a href="localcuisine.html">Local Cuisine</a>
+								<a href="localcuisine.php">Local Cuisine</a>
 							</li>
 
 							<li>
-								<a href="cart.html">Cart</a>
+								<a href="cart.php">Cart</a>
 							</li>
 
 							<li>
-								<a href="contact.html">Contact</a>
+								<a href="contact.php">Contact</a>
 							</li>
 
 							
@@ -255,7 +265,7 @@ simpleCart({
 		<!-- Header Mobile -->
 		<div class="wrap_header_mobile">
 			<!-- Logo moblie -->
-			<a href="index.html" class="logo-mobile">
+			<a href="index.php" class="logo-mobile">
 				<img src="images/icons/logo2.png" alt="IMG-LOGO">
 			</a>
 
@@ -285,7 +295,7 @@ simpleCart({
 							<div class="header-cart-buttons">
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+									<a href="cart.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
 										View Cart
 									</a>
 								</div>
@@ -322,7 +332,7 @@ simpleCart({
 					<li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
 						<div class="topbar-child2-mobile">
 							<span class="topbar-email">
-								fashe@example.com
+								<?php if(isset($_SESSION["loginuser"])){echo $_SESSION["loginuser"];}?>
 							</span>
 
 							<div class="topbar-language rs1-select2">
@@ -345,37 +355,37 @@ simpleCart({
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="index.html">Home</a>
+						<a href="index.php">Home</a>
 						<ul class="sub-menu">
-							<li><a href="index.html">Homepage V1</a></li>
-							<li><a href="home-02.html">Homepage V2</a></li>
-							<li><a href="home-03.html">Homepage V3</a></li>
+							<li><a href="index.php">Homepage V1</a></li>
+							<li><a href="home-02.php">Homepage V2</a></li>
+							<li><a href="home-03.php">Homepage V3</a></li>
 						</ul>
 						<i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="product.html">Shop</a>
+						<a href="product.php">Shop</a>
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="product.html">Sale</a>
+						<a href="product.php">Sale</a>
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="cart.html">Features</a>
+						<a href="cart.php">Features</a>
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="blog.html">Blog</a>
+						<a href="blog.php">Blog</a>
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="about.html">About</a>
+						<a href="about.php">About</a>
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="contact.html">Contact</a>
+						<a href="contact.php">Contact</a>
 					</li>
 				</ul>
 			</nav>
@@ -421,7 +431,7 @@ simpleCart({
 									</div>
 
 									<div class="block2-txt p-t-20 ">
-										<a href="chcikenburgerdetaisl.html" class="block2-name dis-block s-text3 p-b-5 ">
+										<a href="chcikenburgerdetaisl.php" class="block2-name dis-block s-text3 p-b-5 ">
 											<strong >Chicken Burger</strong>
 										</a>
 
@@ -452,7 +462,7 @@ simpleCart({
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+										<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5">
 											<strong>Chicken Finger</strong>
 										</a>
 
@@ -483,7 +493,7 @@ simpleCart({
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+										<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5">
 											<strong>Vegetable Burger</strong>
 										</a>
 
@@ -517,7 +527,7 @@ simpleCart({
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+										<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5">
 											<strong>Fried Chicken</strong>
 										</a>
 
@@ -552,7 +562,7 @@ simpleCart({
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="beefburgerdetails.html" class="block2-name dis-block s-text3 p-b-5">
+										<a href="beefburgerdetails.php" class="block2-name dis-block s-text3 p-b-5">
 											<strong>Beef Burger</strong>
 										</a>
 
@@ -587,7 +597,7 @@ simpleCart({
 									
 
 									<div class="block2-txt p-t-20">
-										<a href="doublebeefdetails.html" class="block2-name dis-block s-text3 p-b-5">
+										<a href="doublebeefdetails.php" class="block2-name dis-block s-text3 p-b-5">
 											<strong>Double Beef Burger</strong>
 										</a>
 
@@ -618,7 +628,7 @@ simpleCart({
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+										<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5">
 											<strong>Double Chicken Burger</strong>
 										</a>
 
@@ -650,7 +660,7 @@ simpleCart({
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+										<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5">
 											<strong>Hotdog</strong>
 										</a>
 
@@ -682,7 +692,7 @@ simpleCart({
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+										<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5">
 											<strong>Chicken Pepperoni Pizza</strong>
 										</a>
 
@@ -712,7 +722,7 @@ simpleCart({
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+										<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5">
 											<strong>Hawaiian Chicken Pizza</strong>
 										</a>
 
@@ -743,7 +753,7 @@ simpleCart({
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+										<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5">
 											<strong>Island Tuna Pizza</strong>
 										</a>
 
@@ -774,7 +784,7 @@ simpleCart({
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+										<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5">
 											<strong>Beef Pepperoni Pizza</strong>
 										</a>
 
@@ -817,7 +827,7 @@ simpleCart({
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+										<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5">
 											<strong>Chicken Nuggets </strong>
 										</a>
 
@@ -849,7 +859,7 @@ simpleCart({
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+										<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5">
 											<strong>Mushroom Soup</strong>
 										</a>
 
@@ -879,7 +889,7 @@ simpleCart({
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+										<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5">
 											<strong>Vegetable Soup</strong>
 										</a>
 
@@ -909,7 +919,7 @@ simpleCart({
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+										<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5">
 											<strong>Fries</strong>
 										</a>
 
@@ -939,7 +949,7 @@ simpleCart({
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+										<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5">
 											<strong>Hash Brown</strong>
 										</a>
 
@@ -969,7 +979,7 @@ simpleCart({
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+										<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5">
 										<strong>Cheesy Wedges</strong>
 										</a>
 
@@ -999,7 +1009,7 @@ simpleCart({
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+										<a href="product-detail.php" class="block2-name dis-block s-text3 p-b-5">
 											<strong>Onion Rings</strong>
 										</a>
 
@@ -1078,7 +1088,7 @@ simpleCart({
 	<script type="text/javascript" src="vendor/sweetalert/sweetalert.min.js"></script>
 	<script type="text/javascript">
 		$('.block2-btn-addcart').each(function(){
-			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
+			var nameProduct = $(this).parent().parent().parent().find('.block2-name').php();
 			var gege = String(nameProduct);
 			var gege2 = gege.substring(20,gege.length-20);
 			$(this).on('click', function(){
@@ -1088,7 +1098,7 @@ simpleCart({
 		});
 
 		$('.block2-btn-addwishlist').each(function(){
-			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
+			var nameProduct = $(this).parent().parent().parent().find('.block2-name').php();
 			var gege = String(nameProduct);
 			var gege2 = gege.substring(20,gege.length-20);
 			$(this).on('click', function(){

@@ -1,3 +1,13 @@
+<?php include 'includes/db_connection.php';
+$conn = OpenCon();
+echo "Connected Successfully"; session_start();
+if(isset($_SESSION['loginuser'])){
+    echo "s";
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,9 +83,9 @@
 			// http method for form, "POST" or "GET", default is "POST"
 			method: "GET" , 
 			// url to return to on successful checkout, default is null
-			success: "success.html" , 
+			success: "success.php" , 
 			// url to return to on cancelled checkout, default is null
-			cancel: "cancel.html" 
+			cancel: "cancel.php" 
 		} 
 	});
 	</script>
@@ -89,7 +99,7 @@
 		<!-- header fixed -->
 		<div class="wrap_header fixed-header2 trans-0-4">
 			<!-- Logo -->
-			<a href="index.html" class="logo2">
+			<a href="index.php" class="logo2">
 				<img src="images/icons/logo2.png" alt="IMG-LOGO">
 			</a>
 	
@@ -116,7 +126,7 @@
 						<div class="header-cart-buttons">
 							<div class="header-cart-wrapbtn">
 								<!-- Button -->
-								<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+								<a href="cart.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
 								View Cart
 								</a>
 							</div>
@@ -149,13 +159,14 @@
 				</div>
 
 				<!-- Logo2 -->
-				<a href="index.html" class="logo2">
+				<a href="index.php" class="logo2">
 					<img src="images/icons/logo2.png" alt="IMG-LOGO">
 				</a>
 
 				<div class="topbar-child2">
 					<span class="topbar-email">
-						fashe@example.com
+						<?php if(isset($_SESSION["loginuser"])){echo $_SESSION["loginuser"];}?>
+						
 					</span>
 
 					
@@ -166,8 +177,10 @@
 					
 						<img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
 						<ul class="sub_menu">
-									<li><a href="login.html">Login</a></li>
-									<li><a href="signup.html">Sign up</a></li>
+						<?php if(isset($_SESSION["loginuser"])){
+								echo "<li><a href='logout.php'>Logout</a></li>";}
+							else {echo'<li><a href="login.php">Login</a></li>
+									<li><a href="signup.php">Sign up</a></li>';}?>
 									
 								</ul>
 						</li></ul>
@@ -193,7 +206,7 @@
 							<div class="header-cart-buttons">
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+									<a href="cart.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
 										View Cart
 									</a>
 								</div>
@@ -217,28 +230,28 @@
 					<nav class="menu">
 						<ul class="main_menu">
 							<li>
-								<a href="index.html">Home</a>
+								<a href="index.php">Home</a>
 								
 							</li>
 
 							<li>
-								<a href="about.html">About</a>
+								<a href="about.php">About</a>
 							</li>
 
 							<li class ="sale-noti">
-								<a href="fastfood.html">Fast Food</a>
+								<a href="fastfood.php">Fast Food</a>
 							</li>
 
 							<li >
-								<a href="localcuisine.html">Local Cuisine</a>
+								<a href="localcuisine.php">Local Cuisine</a>
 							</li>
 
 							<li>
-								<a href="cart.html">Cart</a>
+								<a href="cart.php">Cart</a>
 							</li>
 
 							<li>
-								<a href="contact.html">Contact</a>
+								<a href="contact.php">Contact</a>
 							</li>
 
 							
@@ -256,7 +269,7 @@
 		<!-- Header Mobile -->
 		<div class="wrap_header_mobile">
 			<!-- Logo moblie -->
-			<a href="index.html" class="logo-mobile">
+			<a href="index.php" class="logo-mobile">
 				<img src="images/icons/logo2.png" alt="IMG-LOGO">
 			</a>
 
@@ -333,7 +346,7 @@
 							<div class="header-cart-buttons">
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+									<a href="cart.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
 										View Cart
 									</a>
 								</div>
@@ -370,7 +383,7 @@
 					<li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
 						<div class="topbar-child2-mobile">
 							<span class="topbar-email">
-								fashe@example.com
+								<?php if(isset($_SESSION["loginuser"])){echo $_SESSION["loginuser"];}?>
 							</span>
 
 							<div class="topbar-language rs1-select2">
@@ -393,37 +406,37 @@
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="index.html">Home</a>
+						<a href="index.php">Home</a>
 						<ul class="sub-menu">
-							<li><a href="index.html">Homepage V1</a></li>
-							<li><a href="home-02.html">Homepage V2</a></li>
-							<li><a href="home-03.html">Homepage V3</a></li>
+							<li><a href="index.php">Homepage V1</a></li>
+							<li><a href="home-02.php">Homepage V2</a></li>
+							<li><a href="home-03.php">Homepage V3</a></li>
 						</ul>
 						<i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="product.html">Shop</a>
+						<a href="product.php">Shop</a>
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="product.html">Sale</a>
+						<a href="product.php">Sale</a>
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="cart.html">Features</a>
+						<a href="cart.php">Features</a>
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="blog.html">Blog</a>
+						<a href="blog.php">Blog</a>
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="about.html">About</a>
+						<a href="about.php">About</a>
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="contact.html">Contact</a>
+						<a href="contact.php">Contact</a>
 					</li>
 				</ul>
 			</nav>
@@ -446,7 +459,7 @@
 
 						<div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="zoomIn">
 							<!-- Button -->
-							<a href="index.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
+							<a href="index.php" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
 								Order Now
 							</a>
 						</div>
@@ -465,7 +478,7 @@
 
 						<div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="slideInUp">
 							<!-- Button -->
-							<a href="localcuisine.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
+							<a href="localcuisine.php" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
 								Order Now
 							</a>
 						</div>
@@ -484,7 +497,7 @@
 
 						<div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="rotateIn">
 							<!-- Button -->
-							<a href="fastfood.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
+							<a href="fastfood.php" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
 								Order Now
 							</a>
 						</div>
@@ -511,7 +524,7 @@
 
 						<div class="block1-wrapbtn w-size2">
 							<!-- Button -->
-							<a href="fastfood.html" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+							<a href="fastfood.php" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
 								Fast Food
 							</a>
 						</div>
@@ -525,7 +538,7 @@
 
 						<div class="block1-wrapbtn w-size2">
 							<!-- Button -->
-							<a href="localcuisine.html" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+							<a href="localcuisine.php" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
 								Local Cuisine
 							</a>
 						</div>
@@ -861,14 +874,14 @@
 	<script type="text/javascript" src="vendor/sweetalert/sweetalert.min.js"></script>
 	<script type="text/javascript">
 		$('.block2-btn-addcart').each(function(){
-			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
+			var nameProduct = $(this).parent().parent().parent().find('.block2-name').php();
 			$(this).on('click', function(){
 				swal(nameProduct, "is added to cart !", "success");
 			});
 		});
 
 		$('.block2-btn-addwishlist').each(function(){
-			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
+			var nameProduct = $(this).parent().parent().parent().find('.block2-name').php();
 			$(this).on('click', function(){
 				swal(nameProduct, "is added to wishlist !", "success");
 			});
