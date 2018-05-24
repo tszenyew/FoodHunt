@@ -30,11 +30,13 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
-</head>
 
-<script src="js/simpleCart.js">
+ <!-- simplecart script start for normal header -->
+
+ <script src="js/simpleCart.js">
    
-</script>
+ </script>
+
 <script>
 simpleCart({
     cartColumns: [
@@ -58,6 +60,27 @@ simpleCart({
       accuracy: 2
     });
 </script>
+<script>
+	simpleCart({
+    checkout: { 
+        type: "PayPal" , 
+        email: "ezami321-facilitator@gmail.com" ,
+        // use paypal sandbox, default is false
+        sandbox: true , 
+        // http method for form, "POST" or "GET", default is "POST"
+        method: "GET" , 
+        // url to return to on successful checkout, default is null
+        success: "success.html" , 
+        // url to return to on cancelled checkout, default is null
+        cancel: "cancel.html" 
+    } 
+});
+</script>
+  <!-- simplecart script end  -->
+  
+</head>
+
+
 
   
 </head>
