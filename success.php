@@ -7,7 +7,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>About</title>
+	<title>Thank You</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -81,7 +81,7 @@ session_start();
 			// http method for form, "POST" or "GET", default is "POST"
 			method: "GET" , 
 			// url to return to on successful checkout, default is null
-			success: "success.php" , 
+			//success: "success.php" , 
 			// url to return to on cancelled checkout, default is null
 			cancel: "cart.php" 
 		} 
@@ -228,7 +228,7 @@ else {echo'<li><a href="login.php">Login</a></li>
 	<!-- Title Page -->
 	<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(images/bg.jpg);">
 		<h2 class="l-text2 t-center">
-			About
+			Thank You
 		</h2>
 	</section>
 

@@ -5,7 +5,6 @@ session_start();
 
 ?>
 
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,9 +84,9 @@ session_start();
         // http method for form, "POST" or "GET", default is "POST"
         method: "GET" , 
         // url to return to on successful checkout, default is null
-        success: "success.php" , 
+        
         // url to return to on cancelled checkout, default is null
-        cancel: "cart.php" 
+    
     } 
 });
 </script>
@@ -291,18 +290,29 @@ else {echo'<li><a href="login.php">Login</a></li>
 						<p class="s-text8 p-b-23">
 							Please select your selection for payment 
 						</p>
+						<div class="size13 bo4 m-b-12">
+						<?php 
+						if(isset($_SESSION['loginuser'])){
+							$email = $_SESSION['loginuser'];
+							echo"<input id ='email' class='sizefull s-text7 p-l-15 p-r-15' type='text' name='email' value='$email' placeholder='Email'>";
+						}
+						else {
+						echo "<input id ='email' class='sizefull s-text7 p-l-15 p-r-15' type='text' name='email' placeholder='Email'>";
+						}?>
+						</div>
 						<div class="size13 ">
 						<input id="cod" type="checkbox" name="delivery" onchange = "codchg(this)"value="cod">Cash on Deilvery<br>
 						</div>
 						<span class="s-text19">
 							Enter address
 						</span>
-						<form>
+						<form id="submitform" action="submission.php" method="post">
+						
 						<div class="size13 bo4 m-b-12">
-						<input id ="address1" class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="Address 1">
+						<input id ="address1" class="sizefull s-text7 p-l-15 p-r-15" type="text" name="add1" placeholder="Address 1">
 						</div>
 						<div class="size13 bo4 m-b-12">
-						<input id ="address2" class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="Address 2">
+						<input id ="address2" class="sizefull s-text7 p-l-15 p-r-15" type="text" name="add2" placeholder="Address 2">
 						</div>
 						<div class="size13 bo4 m-b-12">
 						<input id ="address3" class="sizefull s-text7 p-l-15 p-r-15" type="text" name="postcode" placeholder="Postcode / Zip">
@@ -333,11 +343,11 @@ else {echo'<li><a href="login.php">Login</a></li>
 
 				<div class="size15 trans-0-4">
 					<!-- Button -->
-					<a id="checkout" href="javascript:;" class="simpleCart_checkout">
-					<button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
+					
+					<button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4" onclick="submitbutton()">
 						Proceed to Checkout
 					</button>
-					</a>
+					
 				</div>
 			</div>
 		</div>
@@ -391,7 +401,7 @@ else {echo'<li><a href="login.php">Login</a></li>
 	</script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
-	<script>
+<script>
 
 
 	
@@ -400,12 +410,20 @@ else {echo'<li><a href="login.php">Login</a></li>
 	element.checked ? document.getElementById("address2").disabled = true : document.getElementById("address2").disabled = false;
 	element.checked ? document.getElementById("address3").disabled = true : document.getElementById("address3").disabled = false;
 	element.checked ? document.getElementById("address4").disabled = true : document.getElementById("address4").disabled = false;
-	if(document.getElementById("cod").checked = true){
-	 document.getElementById("checkout").href="success.php";
-	}
-	else document.getElementById("checkout").href="javascript:;";
-	}
-	</script>
 
+	}
+	
+
+function submitbutton(){
+	
+	if(document.getElementById("cod").checked == true){
+		window.location.href = 'success.php';
+	}
+	else {
+	simpleCart.checkout();
+	}
+}
+	
+</script>
 </body>
 </html>

@@ -1,3 +1,9 @@
+<?php include 'includes/db_connection.php';
+$conn = OpenCon();
+session_start();
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
