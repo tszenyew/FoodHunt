@@ -238,7 +238,7 @@ else {echo'<li><a href="login.php">Login</a></li>
 			<div class="row">
 				
 					<h1>Payment Sucess</h1>
-					<h2>Thank you for your purchase , your delivery will be send to your email<h2>
+					<h2>Thank you for your purchase , your delivery detail will be send to your email<h2>
 						<a href="index.php"> click here to continue </a>
 				
 
