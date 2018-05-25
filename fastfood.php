@@ -1,4 +1,9 @@
+<?php include 'includes/db_connection.php';
+$conn = OpenCon();
+session_start();
 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -112,7 +117,7 @@ simpleCart({
 
 			<div class="header-wrapicon2">
 				<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-				<span class="header-icons-noti">0</span>
+				<span class="header-icons-noti simpleCart_quantity simpleCart_quantity">0</span>
 
 				<!-- Header cart noti -->
 				<div class="header-cart header-dropdown ">
@@ -131,7 +136,7 @@ simpleCart({
 
 						<div class="header-cart-wrapbtn">
 							<!-- Button -->
-							<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4 simpleCart_checkout">
+							<a href="cart.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4 simpleCart_checkout">
 								Check Out
 							</a>
 						</div>
@@ -185,7 +190,7 @@ simpleCart({
 
 					<div class="header-wrapicon2 m-r-13">
 						<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-						<span class="header-icons-noti">0</span>
+						<span class="header-icons-noti simpleCart_quantity simpleCart_quantity">0</span>
 
 						<!-- Header cart noti -->
 						<div class="header-cart header-dropdown ">
@@ -208,7 +213,7 @@ simpleCart({
 
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+									<a href="cart.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4 simpleCart_checkout">
 										Check Out
 									</a>
 								</div>
@@ -256,7 +261,7 @@ simpleCart({
 
 				<!-- Header Icon -->
 				<div class="header-icons">
-
+				
 				</div>
 			</div>
 		</div>
@@ -280,7 +285,7 @@ simpleCart({
 
 					<div class="header-wrapicon2">
 						<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-						<span class="header-icons-noti">0</span>
+						<span class="header-icons-noti simpleCart_quantity simpleCart_quantity"></span>
 
 						<!-- Header cart noti -->
 						<div class="header-cart header-dropdown">
@@ -301,7 +306,7 @@ simpleCart({
 
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+									<a href="cart.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4 simpleCart_checkout">
 										Check Out
 									</a>
 								</div>

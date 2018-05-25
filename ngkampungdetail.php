@@ -1,14 +1,7 @@
-<?php include 'includes/db_connection.php';
-$conn = OpenCon();
-session_start();
-
-
-?>
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Chicken Burger Details</title>
+	<title>Nasi Goreng Kampung Detail</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -32,15 +25,13 @@ session_start();
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/lightbox2/css/lightbox.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
+</head>
+
 <script src="js/simpleCart.js">
    
 </script>
@@ -68,9 +59,7 @@ simpleCart({
     });
 </script>
 
-  
 </head>
-
 <!-- simplecart script start for normal header -->
 <script src="js/simpleCart.js">
    
@@ -109,21 +98,21 @@ simpleCart({
 			// http method for form, "POST" or "GET", default is "POST"
 			method: "GET" , 
 			// url to return to on successful checkout, default is null
-			success: "success.php" , 
+			success: "success.html" , 
 			// url to return to on cancelled checkout, default is null
-			cancel: "cancel.php" 
+			cancel: "cancel.html" 
 		} 
 	});
 	</script>
 	  <!-- simplecart script end  -->
 	  
-</head>
+
 <body class="animsition">
 
-	<!-- header fixed -->
+<!-- header fixed -->
 	<div class="wrap_header fixed-header2 trans-0-4">
 		<!-- Logo -->
-		<a href="index.php" class="logo2">
+		<a href="index.html" class="logo2">
 			<img src="images/icons/logo2.png" alt="IMG-LOGO">
 		</a>
 	</div>
@@ -144,26 +133,26 @@ simpleCart({
 				</div>
 
 				<!-- Logo2 -->
-				<a href="index.php" class="logo2">
+				<a href="index.html" class="logo2">
 					<img src="images/icons/logo2.png" alt="IMG-LOGO">
 				</a>
 
 				<div class="topbar-child2">
 					<span class="topbar-email">
-						<?php if(isset($_SESSION["loginuser"])){echo $_SESSION["loginuser"];}?>
+						fashe@example.com
 					</span>
 
 					
-<!--  -->
-<ul class="main_menu">
+			
+
+					<!--  -->
+					<ul class="main_menu">
 						<li>
 					
 						<img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
 						<ul class="sub_menu">
-									<?php if(isset($_SESSION["loginuser"])){
-echo "<li><a href='logout.php'>Logout</a></li>";}
-else {echo'<li><a href="login.php">Login</a></li>
-									<li><a href="signup.php">Sign up</a></li>';}?>
+									<li><a href="login.html">Login</a></li>
+									<li><a href="signup.html">Sign up</a></li>
 									
 								</ul>
 						</li></ul>
@@ -188,7 +177,7 @@ else {echo'<li><a href="login.php">Login</a></li>
 							<div class="header-cart-buttons">
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="cart.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+									<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
 										View Cart
 									</a>
 								</div>
@@ -204,8 +193,7 @@ else {echo'<li><a href="login.php">Login</a></li>
 					</div>
 				</div>
 			</div>
-			
-			
+
 			
 			
 
@@ -216,28 +204,28 @@ else {echo'<li><a href="login.php">Login</a></li>
 					<nav class="menu">
 						<ul class="main_menu">
 							<li>
-								<a href="index.php">Home</a>
+								<a href="index.html">Home</a>
 								
 							</li>
 
-							<li >
-								<a href="about.php">About</a>
+							<li>
+								<a href="about.html">About</a>
+							</li>
+
+							<li>
+								<a href="fastfood.html">Fast Food</a>
 							</li>
 
 							<li class ="sale-noti">
-								<a href="fastfood.php">Fast Food</a>
+								<a href="localcuisine.html">Local Cuisine</a>
 							</li>
 
 							<li>
-								<a href="localcuisine.php">Local Cuisine</a>
+								<a href="cart.html">Cart</a>
 							</li>
 
 							<li>
-								<a href="cart.php">Cart</a>
-							</li>
-
-							<li>
-								<a href="contact.php">Contact</a>
+								<a href="contact.html">Contact</a>
 							</li>
 
 							
@@ -256,18 +244,18 @@ else {echo'<li><a href="login.php">Login</a></li>
 
 	<!-- breadcrumb -->
 	<div class="bread-crumb bgwhite flex-w p-l-52 p-r-15 p-t-30 p-l-15-sm">
-		<a href="index.php" class="s-text16">
+		<a href="index.html" class="s-text16">
 			Home
 			<i class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
 		</a>
 
-		<a href="localcuisine.php" class="s-text16">
-			FastFood
+		<a href="localcuisine.html" class="s-text16">
+			Local Cuisine
 			<i class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
 		</a>
 
 		<span class="s-text17">
-			Chicken Burger
+			Nasi Goreng Kampung
 		</span>
 	</div>
 
@@ -279,21 +267,21 @@ else {echo'<li><a href="login.php">Login</a></li>
 					<div class="wrap-slick3-dots"></div>
 
 					<div class="slick3">
-						<div class="item-slick3" data-thumb="images/chicken-burger.jpg">
+						<div class="item-slick3" data-thumb="images/ngkampung.jpg">
 							<div class="wrap-pic-w">
-								<img src="images/chicken-burger.jpg" alt="IMG-PRODUCT" width="200" height="350">
+								<img src="images/ngkampung.jpg" alt="IMG-PRODUCT" width="200" height="350">
 							</div>
 						</div>
 
-						<div class="item-slick3" data-thumb="images/chick1.jpg">
+						<div class="item-slick3" data-thumb="images/ngkampung1.jpg">
 							<div class="wrap-pic-w">
-								<img src="images/chick1.jpg" alt="IMG-PRODUCT" width="200" height="350">
+								<img src="images/ngkampung1.jpg" alt="IMG-PRODUCT" width="200" height="350">
 							</div>
 						</div>
 
-						<div class="item-slick3" data-thumb="images/chick2.jpg">
+						<div class="item-slick3" data-thumb="images/ngkampung2.jpg">
 							<div class="wrap-pic-w">
-								<img src="images/chick2.jpg" alt="IMG-PRODUCT" width="200" height="350">
+								<img src="images/ngkampung2.jpg" alt="IMG-PRODUCT" width="200" height="350">
 							</div>
 						</div>
 					</div>
@@ -302,11 +290,11 @@ else {echo'<li><a href="login.php">Login</a></li>
 
 			<div class="w-size14 p-t-30 respon5">
 				<h4 class="product-detail-name block2-name m-text16 p-b-13">
-					Chicken Burger
+					Nasi Goreng Kampung
 				</h4>
 
 				<span class="m-text17">
-					RM 5.00
+					RM 4.50
 				</span>
 
 				
@@ -341,12 +329,12 @@ else {echo'<li><a href="login.php">Login</a></li>
 
 					<div class="dropdown-content dis-none p-t-15 p-b-23">
 						<p class="s-text8">
-							Burger with quality bun and a mix of chicken petty and vegetables. 
+							Nasi Goreng Kampung is a Malay style fried rice.Long beans, water convolvulus (kangkung), dried prawns and shrimp paste, which are always featured in Malay cooking are used together in this Malaysian style fried rice dish.
 						</p>
 					</div>
 				</div>
 
-				
+			
 
 				
 				</div>
@@ -355,10 +343,10 @@ else {echo'<li><a href="login.php">Login</a></li>
 			
 				<div class="btn-addcart w-size1 trans-0-4">
 								<!-- Button -->
-									<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Chicken Burger', price: 5.00,size:'tiny',thumb:'images/chicken-burger.jpg'});">
-										Add to Cart
+									<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Nasi Goreng Kampung', price: 4.50,size:'tiny',thumb:'images/ngkampung.jpg'});">
+													Add to Cart
 									</button>
-							</div>
+				</div>
 			
 		</div>
 	</div>
@@ -377,17 +365,51 @@ else {echo'<li><a href="login.php">Login</a></li>
 			<div class="wrap-slick2">
 				<div class="slick2">
 
+			 <div class="item-slick2 p-l-15 p-r-15">
+								<!-- Block2 -->
+								<div class="block2">
+									<div class="block2-img wrap-pic-w of-hidden pos-relative ">
+										<img src="images/pattaya.jpg" alt="IMG-PRODUCT" width="200" height="200">
+
+										<div class="block2-overlay trans-0-4">
+
+											<div class="block2-btn-addcart w-size1 trans-0-4">
+												<!-- Button -->
+												
+												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Nasi Goreng Pattaya', price: 5.50,size:'tiny',thumb:'images/pattaya.jpg'});">
+													Add to Cart
+												</button>
+												
+											</div>
+										</div>
+									</div>
+
+									<div class="block2-txt p-t-20 ">
+										<a href="ngpattayadetail.html" class="block2-name dis-block s-text3 p-b-5 ">
+											<strong >Nasi Goreng Pattaya</strong>
+										</a>
+
+										<span class="block2-price m-text6 p-r-5 ">
+											<strong >RM 5.50</strong>
+										</span>
+									</div>
+
+								</div>
+							</div>
+
+							
+							
 					<div class="item-slick2 p-l-15 p-r-15">
 						<!-- Block2 -->
 								<div class="block2">
-									<div class="block2-img wrap-pic-w of-hidden pos-relative ">
-										<img src="images/beef-burger.jpg" alt="IMG-PRODUCT" width="200" height="200">
+									<div class="block2-img wrap-pic-w of-hidden pos-relative">
+										<img src="images/ngcina.jpg" alt="IMG-PRODUCT" width="200" height="200">
 
 										<div class="block2-overlay trans-0-4">
-										
+
 											<div class="block2-btn-addcart w-size1 trans-0-4">
 												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Beef Burger', price: 6.50,size:'tiny',thumb:'images/beef-burger.jpg'});">
+												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Nasi Goreng Cina', price: 4.50,size:'tiny',thumb:'images/ngcina.jpg'});">
 													Add to Cart
 												</button>
 											</div>
@@ -395,73 +417,41 @@ else {echo'<li><a href="login.php">Login</a></li>
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="beefburgerdetails.php" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Beef Burger</strong>
+										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+											<strong>Nasi Goreng Cina</strong>
+										</a>
+
+										<span class="block2-price m-text6 p-r-5">
+											<strong>RM 4.50</strong>
+										</span>
+									</div>
+								</div>
+							</div>
+
+					<div class="item-slick2 p-l-15 p-r-15">
+						<!-- Block2 -->
+								<div class="block2">
+									<div class="block2-img wrap-pic-w of-hidden pos-relative">
+										<img src="images/ngusa.jpg" alt="IMG-PRODUCT" width="200" height="200">
+
+										<div class="block2-overlay trans-0-4">
+
+											<div class="block2-btn-addcart w-size1 trans-0-4">
+												<!-- Button -->
+												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Nasi Goreng USA', price: 6.50,size:'tiny',thumb:'images/ngusa.jpg'});">
+													Add to Cart
+												</button>
+											</div>
+										</div>
+									</div>
+
+									<div class="block2-txt p-t-20">
+										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+											<strong>Nasi Goreng USA</strong>
 										</a>
 
 										<span class="block2-price m-text6 p-r-5">
 											<strong>RM 6.50</strong>
-										</span>
-									</div>
-									
-								</div>
-							</div>
-
-							
-							
-					<div class="item-slick2 p-l-15 p-r-15">
-						<!-- Block2 -->
-								<div class="block2">
-									<div class="block2-img wrap-pic-w of-hidden pos-relative">
-										<img src="images/doublebeef.jpg" alt="IMG-PRODUCT" width="200" height="200">
-
-										<div class="block2-overlay trans-0-4">
-
-											<div class="block2-btn-addcart w-size1 trans-0-4">
-												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Double Beef Burger', price: 8.50,size:'tiny',thumb:'images/doublebeef.jpg'});">
-													Add to Cart
-												</button>
-											</div>
-										</div>
-									</div>
-
-									<div class="block2-txt p-t-20">
-										<a href="doublebeefdetails.php" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Double Beef Burger</strong>
-										</a>
-
-										<span class="block2-price m-text6 p-r-5">
-											<strong>RM 8.00</strong>
-										</span>
-									</div>
-								</div>
-							</div>
-
-					<div class="item-slick2 p-l-15 p-r-15">
-						<!-- Block2 -->
-								<div class="block2">
-									<div class="block2-img wrap-pic-w of-hidden pos-relative">
-										<img src="images/veg-burger.jpg" alt="IMG-PRODUCT" width="200" height="200">
-
-										<div class="block2-overlay trans-0-4">
-
-											<div class="block2-btn-addcart w-size1 trans-0-4">
-												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Vegetable Burger', price: 6.00,size:'tiny',thumb:'images/veg-burger.jpg'});">
-													Add to Cart
-												</button>
-											</div>
-										</div>
-									</div>
-
-									<div class="block2-txt p-t-20">
-										<a href="" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Vegetable Burger</strong>
-										</a>
-
-										<span class="block2-price m-text6 p-r-5">
-											<strong>RM 6.00</strong>
 										</span>
 									</div>
 								</div>
@@ -471,13 +461,13 @@ else {echo'<li><a href="login.php">Login</a></li>
 						<!-- Block2 -->
 								<div class="block2">
 									<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-										<img src="images/doublechicken.jpg" alt="IMG-PRODUCT" width="200" height="200">
+										<img src="images/ngseafood.jpg" alt="IMG-PRODUCT" width="200" height="200">
 
 										<div class="block2-overlay trans-0-4">
 
 											<div class="block2-btn-addcart w-size1 trans-0-4">
 												<!-- Button -->
-												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Double Chicken Burger', price: 6.50,size:'tiny',thumb:'images/doublechicken.jpg'});">
+												<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="simpleCart.add({name:'Nasi Goreng Seafood', price: 6.00,size:'tiny',thumb:'images/ngseafood.jpg'});">
 													Add to Cart
 												</button>
 											</div>
@@ -485,14 +475,14 @@ else {echo'<li><a href="login.php">Login</a></li>
 									</div>
 
 									<div class="block2-txt p-t-20">
-										<a href="doublechcikendetails.php" class="block2-name dis-block s-text3 p-b-5">
-											<strong>Double Chicken Burger</strong>
+										<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+											<strong>Nasi Goreng Seafood</strong>
 										</a>
 
 										
 
 										<span class="block2-price m-text6 p-r-5">
-											<strong>RM 6.50</strong>
+											<strong>RM 6.00</strong>
 										</span>
 									</div>
 								</div>
@@ -578,13 +568,12 @@ else {echo'<li><a href="login.php">Login</a></li>
 		$('.btn-addcart').each(function(){
 			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
 			var gege = String(nameProduct);
-			var gege2 = gege.substring(25,gege.length-22);
+			var gege2 = gege.substring(25,gege.length-25);
 			$(this).on('click', function(){
 				
 				swal(gege2, "is added to cart !", "success");
 			});
 		});
-		
 		
 		
 
@@ -596,3 +585,5 @@ else {echo'<li><a href="login.php">Login</a></li>
 
 </body>
 </html>
+
+

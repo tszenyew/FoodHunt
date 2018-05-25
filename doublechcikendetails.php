@@ -1,9 +1,7 @@
 <?php include 'includes/db_connection.php';
 $conn = OpenCon();
- session_start();
-if(isset($_SESSION['loginuser'])){
-  
-}
+session_start();
+
 
 ?>
 
@@ -175,7 +173,7 @@ simpleCart({
 
 					<div class="header-wrapicon2 m-r-13">
 						<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-						<span class="header-icons-noti">0</span>
+						<span class="header-icons-noti simpleCart_quantity">0</span>
 
 						<!-- Header cart noti -->
 						<div class="header-cart header-dropdown ">

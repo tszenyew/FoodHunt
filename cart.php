@@ -1,9 +1,9 @@
 <?php include 'includes/db_connection.php';
 $conn = OpenCon();
-echo "Connected Successfully"; session_start();
-if(isset($_SESSION['loginuser'])){
-    echo "s";
-}
+session_start();
+
+
+?>
 
 ?>
 <!DOCTYPE html>
@@ -87,7 +87,7 @@ if(isset($_SESSION['loginuser'])){
         // url to return to on successful checkout, default is null
         success: "success.php" , 
         // url to return to on cancelled checkout, default is null
-        cancel: "cancel.php" 
+        cancel: "cart.php" 
     } 
 });
 </script>
@@ -117,36 +117,8 @@ if(isset($_SESSION['loginuser'])){
 								</ul>
 						</li></ul>
 		
-					<span class="linedivide1"></span>
 		
-					<div class="header-wrapicon2">
-						<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-						<span class="header-icons-noti">0</span>
-		
-						<!-- Header cart noti -->
-						<div class="header-cart header-dropdown ">
-							<ul class='header-cart-wrapitem simpleCart_items'>
-							</ul>		
-							<div class="header-cart-total ">
-								SubTotal <p class="simpleCart_total"></p>
-							</div>
-							<div class="header-cart-buttons">
-								<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<a href="cart.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-									View Cart
-									</a>
-								</div>
-		
-								<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4 simpleCart_checkout">
-										Check Out
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
+					
 				</div>
 	</div>
 
@@ -289,12 +261,7 @@ else {echo'<li><a href="login.php">Login</a></li>
 					</div>
 				</div>
 
-				<div class="size10 trans-0-4 m-t-10 m-b-10">
-					<!-- Button -->
-					<button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4" onclick ="updateTotal()">
-						Update Cart
-					</button>
-				</div>
+				
 			</div>
 
 			<!-- Total -->
@@ -324,13 +291,13 @@ else {echo'<li><a href="login.php">Login</a></li>
 						<p class="s-text8 p-b-23">
 							Please select your selection for payment 
 						</p>
-						<div class="size13 bo4 m-b-12">
+						<div class="size13 ">
 						<input id="cod" type="checkbox" name="delivery" onchange = "codchg(this)"value="cod">Cash on Deilvery<br>
 						</div>
 						<span class="s-text19">
 							Enter address
 						</span>
-
+						<form>
 						<div class="size13 bo4 m-b-12">
 						<input id ="address1" class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="Address 1">
 						</div>
@@ -343,7 +310,10 @@ else {echo'<li><a href="login.php">Login</a></li>
 						<div class="size13 bo4 m-b-22">
 						<input id ="address4" class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="State">
 						</div>
-
+						<div class="size13 bo4 m-b-22">
+						<input id ="phonenum" class="sizefull s-text7 p-l-15 p-r-15" type="text" name="phonenum" placeholder="Phone number">
+						</div>
+						</form>
 						
 
 						
@@ -363,7 +333,7 @@ else {echo'<li><a href="login.php">Login</a></li>
 
 				<div class="size15 trans-0-4">
 					<!-- Button -->
-					<a href="javascript:;" class="simpleCart_checkout">
+					<a id="checkout" href="javascript:;" class="simpleCart_checkout">
 					<button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
 						Proceed to Checkout
 					</button>
@@ -430,8 +400,10 @@ else {echo'<li><a href="login.php">Login</a></li>
 	element.checked ? document.getElementById("address2").disabled = true : document.getElementById("address2").disabled = false;
 	element.checked ? document.getElementById("address3").disabled = true : document.getElementById("address3").disabled = false;
 	element.checked ? document.getElementById("address4").disabled = true : document.getElementById("address4").disabled = false;
-
-
+	if(document.getElementById("cod").checked = true){
+	 document.getElementById("checkout").href="success.php";
+	}
+	else document.getElementById("checkout").href="javascript:;";
 	}
 	</script>
 

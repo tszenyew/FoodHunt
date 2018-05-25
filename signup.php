@@ -1,6 +1,5 @@
 <?php include 'includes/db_connection.php';
 $conn = OpenCon();
-echo "Connected Successfully";
 session_start();
 if(isset($_SESSION['loginuser'])){
     header("location: index.php");
